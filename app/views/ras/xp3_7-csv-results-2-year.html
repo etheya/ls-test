@@ -1,4 +1,4 @@
-{% extends "layout-2.html" %} {% set pageHeading = "Download your results" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading, serviceName) }} {% endblock %} {% block content %} {% set schemeMember = data['first--name-first'] + '
+{% extends "layout.html" %} {% set pageHeading = "Download your results" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading, serviceName) }} {% endblock %} {% block content %} {% set schemeMember = data['first--name-first'] + '
 ' + data['last--name-last'] %}
 
 <main id="content" role="main">
@@ -27,7 +27,7 @@
                 <div class="attachment--title">
                     <div class="icon--file">
 
-                        <a aria-hidden="true" href="/public/documents/CY+1-upload-results-template_Jan-Mar.csv" download><img alt="" src="/public/images/icon-file-download.png"></a>
+                        <a aria-hidden="true" href="/public/ras/documents/CY+1-upload-results-template_Jan-Mar.csv" download><img alt="" src="/public/images/icon-file-download.png"></a>
 
                     </div>
 
@@ -35,7 +35,7 @@
 
                         <p>
                             <a aria-describedby="attachment-1484006-accessibility-help"
-                            href="/public/documents/CY+1-upload-results-template_Jan-Mar.csv">
+                            href="/public/ras/documents/CY+1-upload-results-template_Jan-Mar.csv">
                             Residency-status-results.CSV</a>
                         </p>
 

@@ -1,4 +1,4 @@
-{% extends "layout-2.html" %} {% set pageHeading = "Download your results
+{% extends "layout.html" %} {% set pageHeading = "Download your results
 " %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading, serviceName) }} {% endblock %} {% block content %} {% set schemeMember = data['first--name-first'] + '
 ' + data['last--name-last'] %}
 
@@ -37,7 +37,7 @@
 
                         <p>
                             <a aria-describedby="attachment-1484006-accessibility-help"
-                            href="/public/documents/file-upload-results-template_April-Dec.csv">
+                            href="/public/ras/documents/file-upload-results-template_April-Dec.csv">
                             Residency-status-results.CSV</a>
                         </p>
 

@@ -1,4 +1,4 @@
-{% extends "layout-2.html" %} {% set pageHeading = "Residency status spreadsheet" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
+{% extends "layout.html" %} {% set pageHeading = "Residency status spreadsheet" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
 serviceName) }} {% endblock %} {% block content %}
 
 {% if journeyName == 5 or journeyName == 55 %} {% if upload == 'upload' %} {% set pageHeading = "The results file is not available yet" %} {% else %} {% set pageHeading = "The residency status has been added" %} {% endif%} {% else %} {% set pageHeading = "The results file is not available yet" %} {% endif %}
@@ -50,19 +50,19 @@ serviceName) }} {% endblock %} {% block content %}
 
 						{% if journeyName == 55 %}
 
-						<a aria-hidden="true" class="thumbnail" href="/public/documents/file-upload-results-templateJan-MarCY+1.csv" download>
+						<a aria-hidden="true" class="thumbnail" href="/public/ras/documents/file-upload-results-templateJan-MarCY+1.csv" download>
 							<img alt="" src="/public/images/downloadthefile.png">
 						</a>
 
 						{% elif journeyName == 555 %}
 
-						<a aria-hidden="true" class="thumbnail" href="/public/documents/file-upload-results-template_April-Dec.csv" download>
+						<a aria-hidden="true" class="thumbnail" href="/public/ras/documents/file-upload-results-template_April-Dec.csv" download>
 							<img alt="" src="/public/images/downloadthefile.png">
 						</a>
 
 						{% elif cycy1exist == 'new' %}
 
-						<a aria-hidden="true" class="thumbnail" href="/public/documents/file-upload-results-template_jan-mar.csv" download>
+						<a aria-hidden="true" class="thumbnail" href="/public/ras/documents/file-upload-results-template_jan-mar.csv" download>
 							<img alt="" src="/public/images/downloadthefile.png">
 						</a>
 
@@ -79,18 +79,18 @@ serviceName) }} {% endblock %} {% block content %}
 						<h2 class="title">
 
 							{% if journeyName == 55 %}
-							<a aria-describedby="attachment-1484006-accessibility-help" href="/public/documents/file-upload-results-template_April-Dec.csv">
+							<a aria-describedby="attachment-1484006-accessibility-help" href="/public/ras/documents/file-upload-results-template_April-Dec.csv">
 								Residency-status-results.CSV</a>
 						</h2>
 
 						{% elif journeyName == 555 %}
-						<a aria-describedby="attachment-1484006-accessibility-help" href="/public/documents/file-upload-results-templateJan-MarCY+1.csv">
+						<a aria-describedby="attachment-1484006-accessibility-help" href="/public/ras/documents/file-upload-results-templateJan-MarCY+1.csv">
 							Residency-status-results.CSV</a>
 						{% elif cycy1exist == 'new' %}
-						<a aria-describedby="attachment-1484006-accessibility-help" href="/public/documents/file-upload-results-template_jan-mar.csv">
+						<a aria-describedby="attachment-1484006-accessibility-help" href="/public/ras/documents/file-upload-results-template_jan-mar.csv">
 							Residency-status-results.CSV</a>
 						{% else %}
-						<a aria-describedby="attachment-1484006-accessibility-help" href="/public/documents/file-upload-results-template_jan-mar.csv">
+						<a aria-describedby="attachment-1484006-accessibility-help" href="/public/ras/documents/file-upload-results-template_jan-mar.csv">
 							Residency-status-results.CSV</a>
 						</h2>
 
