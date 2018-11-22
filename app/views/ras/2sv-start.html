@@ -1,0 +1,63 @@
+{% set serviceName = "" %}
+{% extends "layout.html" %}}
+{% block page_title %}
+Government gateway
+{% endblock %}
+{% block content %}
+  <main id="content" role="main">
+    <div class="phase-banner-beta">
+      <p><strong class="phase-tag">BETA</strong> <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span></p>
+    </div>
+   
+      <div class="grid-layout__column--2-3">
+        <header class="page-header">
+          <h1 class="heading-large">We're changing the way you<br>
+          sign in</h1>
+        </header>
+        <p>Each time you sign in to HMRC you'll need your user ID, password and a unique<br>
+        6 digit access code.</p>
+        <details>
+          <summary>
+            Why do I need an access code?
+          </summary>
+   
+          <div>
+            <p>To help prevent unauthorised access to your HMRC account. This means if<br>
+            someone else tries to use your ID and password, they won’t be able to sign in<br>
+            without an access code.</p>
+          </div>
+
+        </details><a href="mobile-or-landline"><button class="button button--get-started" type="submit">Continue</button></a>
+        <div style="margin-top:30px">
+      
+        </div><a class="report-error" href="#support" id="get-help-action" onclick="$('#support').toggle();return false;" style="font-size: 16px">Get help with this page</a>
+        <div class="hidden-help" id="support" style="display: none; clear: both;">
+          <div class="report-error__content" id="report-error-partial-form">
+            <h3>Tell us about a problem you’ve encountered or something that needs to improve.</h3>
+            <p>Don’t include any personal or financial information. For example your National Insurance number or credit card details.</p>
+            <form action="" class="form--feedback" method="" novalidate="novalidate">
+              <fieldset>
+                <div class="form-group-compound">
+                  <label class="form-label" for="textarea">Describe the issue</label> 
+                  <textarea aria-required="true" class="form-control-3-4" cols="30" data-msg-required="Please enter details of what you were doing." data-rule-required="true" id="textarea" maxlength="1000" name="report-action" rows="6"></textarea>
+                </div>
+                <div class="form-group-compound">
+                  <label class="form-label" for="report-error">Where on the page did it happen?</label> <input aria-required="true" class="form-control-3-4" data-msg-required="Please enter details of what went wrong." data-rule-required="true" id="report-error" maxlength="1000" name="report-error" type="text">
+                </div>
+                <div class="form-group-compound">
+                  <label class="form-label" for="report-name">Name</label> <input aria-required="true" class="form-control-3-4" data-msg-required="Please provide your name." data-rule-letterswithbasicpunc="true" data-rule-required="true" id="report-name" maxlength="70" name="report-name" type="text">
+                </div>
+                <div class="form-group-compound">
+                  <label class="form-label" for="report-email">Email</label> <input aria-required="true" class="form-control-3-4" data-msg-required="Please provide your email address." data-rule-email="true" data-rule-required="true" id="report-email" maxlength="255" name="report-email" type="email">
+                </div><input name="isJavascript" type="hidden" value="true"> <input name="referrer" type="hidden" value="https://web-qa.tax.service.gov.uk/mdtp/registration">
+                <div class="form-field">
+                  <button class="button" data-journey-click="" id="report-submit" type="submit">Send</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div><small class="hidden-help" id="support" style="display: none; clear: both;"></small>
+      </div>
+    </div>
+  </main>
+  {% endblock %}

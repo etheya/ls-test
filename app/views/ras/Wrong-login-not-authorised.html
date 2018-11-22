@@ -1,0 +1,40 @@
+{% extends "layout-2.html" %}
+
+{% set pageHeading = "Wrong login -- You are not authorised" %}
+
+{% block page_title %}
+	There is a problem - Look up residency status for relief at source - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+	{% include "includes/ras/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			{{ macroBackButton.backButton( next = "gov-gateway", value = "Back" ) }}
+
+			<h1 class="heading-xlarge">There is a problem</h1>
+
+			<p>You signed in as an individual, organisation or agent.</p>
+
+			<p>To use the service, you must either:</p>
+
+			<ul class="list list-bullet">
+				<li><a href="">sign in with your pension scheme administrator or practitioner details</a> if you have one of these accounts</li>
+				<li><a href="">register as an administrator or practitioner</a></li>
+			</ul>
+
+		</div>
+	</div>
+
+	{% include "includes/ras/contactb.html" %}
+
+</main>
+
+	{% include "includes/ras/footer_script.html" %}
+
+{% endblock %}

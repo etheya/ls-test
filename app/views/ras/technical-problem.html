@@ -1,0 +1,23 @@
+{% extends "layout-2.html" %}
+
+{% set pageHeading = "Technical Problem" %}
+
+{% block page_title %}
+    {{ macroPageTitle.pageTitle(pageHeading, serviceName) }}
+{% endblock %}
+
+{% block content %}
+
+    <main id="content" role="main">
+        {% include "includes/ras/phase_banner_beta.html" %}
+        <div class="grid-row" id="outage">
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge">
+                    There is a problem with the service
+                </h1>
+                <p class="lede">Try again later.</p>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

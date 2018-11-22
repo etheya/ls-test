@@ -1,0 +1,46 @@
+{#  Call with defaults: {{ macroDate.date() }}
+
+    macroDate.date(
+        legend = "Some other use of date inputs",
+        context = "An additional line to explain things.",
+        hint = "For example, 11 1 2112",
+        slug = "another-thing",
+        legendHidden = true
+    )
+#}
+{% macro date (
+    context = "",
+    data = {},
+    hint = "For example, 31 3 1980",
+    legend = "Date of birth",
+    legendHidden,
+    slug = "dob"
+) %}
+<div class="form-group form-date">
+    <fieldset class="inline">
+
+        <legend>
+        
+        <span {% if legendHidden %} class="visually-hidden"{% endif %}>{{ legend }}</span>
+        {% if hint %}<span class="form-hint" id="{{ slug }}-hint">{{ hint }}</span>{% endif %}
+
+        </legend>
+
+        {% if context %}<p>{{ context }}</p>{% endif %}
+        
+        
+        <div class="form-group form-group-day">
+            <label for="{{ slug }}-day">Day</label>
+            <input class="form-control" id="{{ slug }}-day" name="{{ slug }}-day" type="text"  min="0" max="99" aria-describedby="{{ slug }}-hint" value="{{ data[slug + '-day'] }}" />
+        </div>
+        <div class="form-group form-group-month">
+            <label for="{{ slug }}-month">Month</label>
+            <input class="form-control" id="{{ slug }}-month" name="{{ slug }}-month" type="text"  min="0" max="99" value="{{ data[slug + '-month'] }}" />
+        </div>
+        <div class="form-group form-group-year">
+            <label for="{{ slug }}-year">Year</label>
+            <input class="form-control" id="{{ slug }}-year" name="{{ slug }}-year" type="text"  min="0" max="9999" value="{{ data[slug + '-year'] }}"/>
+        </div>
+    </fieldset>
+</div>
+{% endmacro %}

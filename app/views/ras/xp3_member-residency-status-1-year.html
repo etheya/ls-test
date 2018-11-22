@@ -1,0 +1,51 @@
+{% extends "layout-2.html" %}
+{% set pageHeading = "Member's residency status" %}
+
+{% block page_title %}
+{{ macroPageTitle.pageTitle(pageHeading, serviceName) }}
+{% endblock %}
+
+{% block content %}
+
+{% set schemeMember = data['first--name-first'] + ' ' + data['last--name-last'] %}
+
+<main id="content" role="main">
+
+    {% include "includes/ras/phase_banner_beta.html" %}
+
+	<!-- ////////////////////////////// -->
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <div class="govuk-box-highlight">
+          <h1 class="heading-large">{{schemeMember}}’s residency status</h1>
+          <p class="lede" role="text">
+            For the 2018 to 2019 tax year use <span class="bold body-text">Scotland</span>
+          </p>
+        </div>
+
+
+
+        <h2 class="heading-medium">What you must do next</h2>
+        <p>Use the residency status for the whole tax year in your relief at source claims. You cannot change the residency status in your claims during the tax year.</p>
+        <p>From January 2019 use this service to get {{schemeMember}}’s residency status for the 2019 to 2020 tax year.</p>
+  		</div>
+
+		<div class="column-two-thirds">
+			<p><a href="/sprint38/cleanAndRestartSingleSearch">Look up another member</a></p>
+		</div>
+
+	</div>
+
+	<!-- //////////////////////////////- -->
+
+	{% include "includes/ras/choose_else_button_xp.html" %}
+
+	{% include "includes/ras/contactb.html" %}
+
+</main>
+
+	{% include "includes/ras/footer_script.html" %}
+
+{% endblock %}

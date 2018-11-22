@@ -1,0 +1,52 @@
+ {% include "includes/scripts.html" %}
+
+<script>
+	$(document).ready(function () {
+		$('#showthis').click(function () {
+			$('.menuthis').slideToggle('fast');
+		});
+	});
+</script>
+
+<div class="contact  ras-report-error">
+	<p class="expandContent report-a-problem-toggle">
+		<a href="#" id="showthis" class="js-report-a-problem-toggle" style="clear:all; outline: none; border: none; background:none;-moz-outline-style: none;">
+		Get help with this page</a>
+	</p>
+</div>
+
+<div class="menuthis report-a-problem-container" style="display: none;max-width: 35em;">
+
+	<div class="report-a-problem-inner">
+		<div class="report-a-problem-content">
+			<h2 class="">Help us improve GOV.UK</h2>
+
+			<p>Don't include any personal or financial information. For example, your National Insurance or credit card numbers.</p>
+			
+			<form>
+			
+				<fieldset class="panel panel-border-narrow">
+
+					<div class="form-group-compound">
+						<label for="report-action" class="form-label">What were you doing?</label>
+						<input id="report-action" maxlength="1000" class="input--fullwidth form-control" name="report-action" type="text" data-rule-required="true"
+						    data-msg-required="Please enter details of what you were doing." aria-required="true">
+					</div>
+					<div class="form-group-compound">
+						<label for="report-error" class="form-label">What went wrong?</label>
+						<input id="report-error" maxlength="1000" class="input--fullwidth form-control" name="report-error" type="text" data-rule-required="true"
+						    data-msg-required="Please enter details of what went wrong." aria-required="true">
+					</div>
+					<input type="hidden" name="isJavascript" value="true">
+					<input type="hidden" name="referrer" value=" ">
+
+				</fieldset>
+
+				<div class="form-field button-wrapper">
+					<button id="report-submit" class="button" type="submit" data-journey-click="page:Click:Is there anything wrong with this page? Submit">Send</button>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,61 @@
+{% extends "layout-2.html" %}
+
+{% set pageHeading = "What is the member’s name?" %}
+
+{% block page_title %}
+    {{ macroPageTitle.pageTitle(pageHeading, serviceName) }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/ras/phase_banner_beta.html" %}
+
+    {{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            {% include "includes/ras/errors.html" %}
+
+           <form method="post" class="form" onsubmit="return validateNameForm()">
+
+                <fieldset>
+
+                    <legend>
+                        <span>{{ macroPageHeader.pageHeader(pageHeading) }}</span>
+                    </legend>
+
+                    {{ macroInput.input(
+                        data = data,
+                        label = "First name",
+                        id = "first-name-input",
+                        name = "first--name",
+                        errorMessage = "Enter first name",
+                        value = "first"
+                    ) }}
+
+                    {{ macroInput.input(
+                        data = data,
+                        label = "Last name",
+                        id = "last-name-input",
+                        name = "last--name",
+                        errorMessage = "Enter last name",
+                        value = "last"
+                    ) }}
+
+                </fieldset>
+
+                {% import "macros/button.njk" as macroButton %}
+                {{ macroButton.button(next = "xp3_member-national-insurance-number-2-year",value = "Continue") }}
+
+            </form>
+
+        </div>
+    </div>
+
+    {% include "includes/ras/contactb.html" %}
+
+</main>
+{% endblock %}

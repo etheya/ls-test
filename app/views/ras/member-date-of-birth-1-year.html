@@ -1,0 +1,70 @@
+{% extends "layout-2.html" %}
+{% set pageHeading = "What is the member’s date of birth?" %}
+
+{% block page_title %}
+{{ macroPageTitle.pageTitle(pageHeading, pageSection) }}
+{% endblock %}
+
+{% block content %}
+{% set schemeMember = data['first--name-first'] + ' ' + data['last--name-last']
+%} {% set pageHeading = "What is " + schemeMember + "’s date of birth?" %}
+
+<main id="content" role="main">
+
+    {% include "includes/ras/phase_banner_beta.html" %}
+
+    {{ macroBackButton.backButton( next = "member-national-insurance-number", value = "Back" ) }}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            {% include "includes/ras/errors.html" %}
+
+            <form method="post" class="form" onsubmit="return validateDateOfBirth()">
+
+                <fieldset>
+
+                    <legend>
+                        <span>{{ macroPageHeader.pageHeader(pageHeading) }}</span>
+                    </legend>
+
+                    <div class="form-group" id="dob-form-group">
+                        <div class="form-date">
+                            <span class="form-hint" id="dob-hint">For example, 31 3 1980</span>
+                            <span class="error-message visually-hidden" id="dob-error">Enter date of birth</span>
+
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="dob-day">Day</label>
+                                <input type="number" class="form-control" id="dob-day" name="dob-day" type="text"  min="0" max="99" aria-describedby="dob-hint" value="{{ data['dob-day'] }}" />
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="dob-month">Month</label>
+                                <input type="number" class="form-control" id="dob-month" name="dob-month" type="text"  min="0" max="99" value="{{ data['dob-month'] }}" />
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="dob-year">Year</label>
+                                <input type="number" class="form-control" id="dob-year" name="dob-year" type="text"  min="0" max="9999" value="{{ data['dob-year'] }}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+
+                {% if (journeyName == 'nonmatch') %}
+                {% import "macros/button.njk" as macroButton %}
+                {{ macroButton.button(next = "no-residency-status-displayed", value = "Continue") }}
+                {% else %}
+                {% import "macros/button.njk" as macroButton %}
+                {{ macroButton.button(next = "xp3_member-residency-status-1-year", value = "Continue") }}
+                {% endif %}
+
+            </form>
+
+        </div>
+    </div>
+
+    {% include "includes/ras/contactb.html" %}
+
+</main>
+{% endblock %}

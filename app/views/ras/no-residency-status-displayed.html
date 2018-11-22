@@ -1,0 +1,88 @@
+{% extends "layout-2.html" %}
+
+{% set pageHeading = "The residency status cannot be displayed" %}
+
+{% block page_title %}
+    {{ macroPageTitle.pageTitle(pageHeading, serviceName) }}
+{% endblock %}
+
+{% block content %}
+{% set schemeMember = "Paul Miller" %}
+{% set pageHeading = "" + schemeMember + "’s residency status cannot be displayed" %}
+
+
+<main id="content" role="main">
+
+    {% include "includes/ras/phase_banner_beta.html" %}
+    {{ macroBackButton.backButton( next = "member-date-of-birth", value = "Back" ) }}
+
+	<!-- //////////////////////////////- -->
+
+<div class="grid-row">
+<div class="column-two-thirds">
+
+    {{ macroPageHeader.pageHeader(pageHeading, pageSection) }}
+
+    <!-- <p>Details for {{ data['first--name-first'] }} {{ data['last--name-last'] }} cannot be found.</p> -->
+    <p>You should check with {{ data['first--name-first'] }} {{ data['last--name-last'] }} to make sure you have their correct details.</p>
+
+</div>
+
+<div class="column-two-thirds">
+
+    <div class = "grid-row ras-div-table-divider">
+        <div class = "column-one-half">
+            Name
+        </div>
+        <div class = "column-one-quarter">
+            Paul Miller
+        </div>
+        <div class = "column-one-quarter ras-align-right">
+            <a href="name-check">Change<span class="visually-hidden">name</span></a>
+        </div>
+    </div>
+
+    <div class = "grid-row ras-div-table-divider">
+        <div class = "column-one-half">
+            National Insurance number
+        </div>
+        <div class = "column-one-quarter">
+            QQ123456C
+        </div>
+        <div class = "column-one-quarter ras-align-right">
+            <a href="national-insurance-number-check">Change<span class="visually-hidden">national insurance number</span></a>
+        </div>
+    </div>
+
+    <div class = "grid-row ras-div-table-divider">
+        <div class = "column-one-half">
+            Date of birth
+        </div>
+        <div class = "column-one-quarter">
+            16 June 1992
+        </div>
+        <div class = "column-one-quarter ras-align-right">
+            <a href="date-of-birth-check">Change<span class="visually-hidden">date of birth</span></a>
+        </div>
+    </div>
+
+</div>
+
+<div class="column-two-thirds">
+
+    <div class = "ras-top-margin"
+    <p>If you have checked and everything is correct, <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/national-insurance-enquiries-for-employees-and-individuals">{{ schemeMember }} must contact HMRC</a> to update their personal details.</p>
+    </div>
+
+</div>
+</div>
+
+{% include "includes/ras/choose_else_button.html" %}
+
+{% include "includes/ras/contactb.html" %}
+
+</main>
+
+{% include "includes/ras/footer_script.html" %}
+
+{% endblock %}

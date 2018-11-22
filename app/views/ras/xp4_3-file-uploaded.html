@@ -1,0 +1,27 @@
+{% extends "layout-2.html" %} {% set pageHeading = "File uploaded succesfully" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
+serviceName) }} {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  {% include "includes/ras/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Your file has been uploaded</h1>
+
+      <p>Files less than 1MB should be ready in a few minutes. Larger files take longer. If the service is busy it can take up to 24 hours.</p>
+      <p>You cannot upload another file while this one is processing.</p>
+      <p>The results will be available on the service for 3 calendar days before being deleted.</p>
+
+    </div>
+  </div>
+
+<form method="post">
+  {% import "macros/button.njk" as macroButton %}
+  {{ macroButton.button(next = "xp4_4-choose-option-processing",value = "Continue") }}
+</form>
+
+  {% include "includes/ras/contactb.html" %}
+
+</main>
+
+{% include "includes/ras/footer_script.html" %} {% endblock %}

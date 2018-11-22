@@ -1,0 +1,41 @@
+<script>
+    var d = Date();
+
+    console.log(d);
+    console.log("mac");
+
+    function addwkday(date, days) {
+        date.setDate(date.getUTCDate());
+
+        var counter = 0;
+        if (days > 0) {
+            while (counter < days) {
+                date.setDate(date.getUTCDate() + 1); // Add a day to get date tomorrow
+
+                var check = date.getUTCDay(); // date becomes a number (0 to 6)
+
+
+                if (check == 0 || check == 6) {
+                    //  weekend (0=Sun & 6=Sat)
+                } else {
+                    counter++; // weekday
+                }
+            }
+        }
+        return date;
+    }
+
+    function ordsfx(a) {
+        return ["th", "st", "nd", "rd"][(a = ~~(a < 0 ? -a : a) % 100) > 10 && a < 14 || (a %= 10) > 3 ? 0 : a]
+    }
+
+    var d = addwkday(new Date(), 3);
+    var ords = ordsfx(d.getUTCDate());
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var b = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    var nCount = document.getElementById("numbercount");
+    if (nCount != null) {
+        document.getElementById("numbercount").innerHTML = days[d.getUTCDay()] + '&nbsp;' + d.getUTCDate() + '&nbsp;' + b[d.getUTCMonth()] + '&nbsp;' + d.getUTCFullYear();
+    }
+</script>

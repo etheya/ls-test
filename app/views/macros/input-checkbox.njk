@@ -1,0 +1,30 @@
+{#
+    hint = false,   // tie a hint to the first option
+    name = "",      // `name` value
+    id = "",        // item identifier
+    target = "",    // `data-target` value
+    value = ""      // item value
+
+    {{ macroCheckbox.checkbox(
+        data = data,
+        id = "1",
+        hint = true,
+        label = "Auction",
+        name = "hvd--sell-goods",
+        value = "auction"
+    ) }}
+#}
+{% macro checkbox (
+    data = {},
+    hint = false,
+    id = "",
+    label = "",
+    name = "",
+    target = "",
+    value = ""
+) %}
+    <div class="multiple-choice"{% if target %} data-target="{{ target }}"{% endif %}>
+        <input type="checkbox" name="{{ name }}" id="{{ name }}-{{ id }}" value="{{ label }}"{% if hint %} aria-describedby="{{ hint }}"{% endif %} {{ checked("{{ name }}", "data['label']") }} />
+        <label for="{{ name }}-{{ id }}">{{ label }}</label>
+    </div>
+{% endmacro %}

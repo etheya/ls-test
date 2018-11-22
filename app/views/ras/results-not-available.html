@@ -1,0 +1,162 @@
+{% extends "layout-2.html" %} {% set pageHeading = "Residency status spreadsheet" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
+serviceName) }} {% endblock %} {% block content %}
+
+{% if journeyName == 5 or journeyName == 55 %} {% if upload == 'upload' %} {% set pageHeading = "The results file is not available yet" %} {% else %} {% set pageHeading = "The residency status has been added" %} {% endif%} {% else %} {% set pageHeading = "The results file is not available yet" %} {% endif %}
+
+<main id="content" role="main">
+	{% include "includes/ras/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			{{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+			{{ macroPageHeader.pageHeader(pageHeading, pageSection) }}
+
+			{% if upload == 'upload' %} {% set pageHeading = "There has been a problem uploading your file" %} {% else %} {% set pageHeading
+			= "The residency status has been added" %} {% endif%}
+
+		</div>
+	</div>
+
+	<!-- -------------------------- -->
+
+	{% if journeyName == 5 or journeyName == 55 or journeyName == 555 %}
+
+	{% if upload == 'upload' %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<p>The results are still being added to the file you uploaded.</p>
+			<p>It can take up to 24 hours for the results to be added from when you upoaded the file.</p>
+		</div>
+	</div>
+
+	{% else %}
+
+	<div class="grid-row sidebar-with-body">
+		<div class="column-two-third">
+			<h1 style="font-weight:700;">
+				Document
+			</h1>
+
+		</div>
+		<div class="column-two-thirds" aria-labelledby="documents-title">
+
+			<div class="govuk-govspeak direction-ltr">
+				<section class="attachment embedded" id="attachment_1484006">
+					<div class="attachment-thumb">
+
+						{% if journeyName == 55 %}
+
+						<a aria-hidden="true" class="thumbnail" href="/public/documents/file-upload-results-templateJan-MarCY+1.csv" download>
+							<img alt="" src="/public/images/downloadthefile.png">
+						</a>
+
+						{% elif journeyName == 555 %}
+
+						<a aria-hidden="true" class="thumbnail" href="/public/documents/file-upload-results-template_April-Dec.csv" download>
+							<img alt="" src="/public/images/downloadthefile.png">
+						</a>
+
+						{% elif cycy1exist == 'new' %}
+
+						<a aria-hidden="true" class="thumbnail" href="/public/documents/file-upload-results-template_jan-mar.csv" download>
+							<img alt="" src="/public/images/downloadthefile.png">
+						</a>
+
+						{% else %}
+
+						<a aria-hidden="true" class="thumbnail" href="file-upload-results-template_jan-mar.csv" download>
+							<img alt="" src="/public/images/downloadthefile.png">
+						</a>
+
+						{% endif %}
+
+					</div>
+					<div class="attachment-details">
+						<h2 class="title">
+
+							{% if journeyName == 55 %}
+							<a aria-describedby="attachment-1484006-accessibility-help" href="/public/documents/file-upload-results-template_April-Dec.csv">
+								Residency-status-results.CSV</a>
+						</h2>
+
+						{% elif journeyName == 555 %}
+						<a aria-describedby="attachment-1484006-accessibility-help" href="/public/documents/file-upload-results-templateJan-MarCY+1.csv">
+							Residency-status-results.CSV</a>
+						{% elif cycy1exist == 'new' %}
+						<a aria-describedby="attachment-1484006-accessibility-help" href="/public/documents/file-upload-results-template_jan-mar.csv">
+							Residency-status-results.CSV</a>
+						{% else %}
+						<a aria-describedby="attachment-1484006-accessibility-help" href="/public/documents/file-upload-results-template_jan-mar.csv">
+							Residency-status-results.CSV</a>
+						</h2>
+
+						{% endif %}
+
+						<p class="metadata">
+							<span class="type">
+								<abbr>CSV</abbr>
+							</span>,
+							<span class="file-size">less than 3MB</span>.
+						</p>
+
+						<p>When you have opened this file, you should save a copy of it. The file is automatically deleted
+						from the service when you open it.</p>-->
+
+					</div>
+
+					{% if journeyName == 5 %}
+
+					<p>This file will be deleted on Saturday 17 February 2018 at 1.27pm if you do not open it.</p>
+
+					<p>When you have opened this file, you should save a copy of it. The file is automatically deleted from the service when you open it.</p>
+
+					<p>When you open the file, the first residency status is for the current tax year of 2017 to 2018. The second residency status should be used for the tax year 2018 to 2019.</p>
+
+					{% endif %}
+			</div>
+
+			{% if journeyName == 55 or journeyName == 555 %}
+
+			<p>This file will be deleted on Sunday 15 April 2018 at 1.27pm if you do not open it.</p>
+
+			<p>When you have opened this file, you should save a copy of it. The file is automatically deleted from the service when
+				you open it.</p>
+
+			<p>You should also use this service from January to get the residency status for these members for the 2019 to 2020 tax year.</p>
+			{% else %} {% endif %}
+
+		</div>
+		</section>
+	</div>
+
+	</div>
+	</div>
+
+	{% endif%}
+
+ {% else %}
+
+	<div class="grid-row sidebar-with-body">
+		<div class="column-two-thirds">
+			<p>The results are still being added to the file you uploaded.<p>
+			<p>It can take up to 24 hours for the results to be added from when you uploaded the file.</p>
+		</div>
+	</div>
+
+	{% endif %}
+
+	<!-- ---------------------------------- -->
+
+		{% include "includes/ras/choose_else_button.html" %}
+
+        {% include "includes/ras/contactb.html" %}
+
+</main>
+
+	{% include "includes/ras/footer_script.html" %}
+
+{% endblock %}

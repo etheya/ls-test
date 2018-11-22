@@ -1,0 +1,27 @@
+{% extends "layout-2.html" %}
+
+{% set pageHeading = "Service unavailable" %}
+
+{% block page_title %}
+    {{ macroPageTitle.pageTitle(pageHeading, serviceName) }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/ras/phase_banner_beta.html" %}
+
+    <div class="grid-row" id="outage">
+        <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">
+            Service unavailable
+        </h1>
+        <p>You will be able to use the service from 11:59am on Monday 19 November 2018.</p>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

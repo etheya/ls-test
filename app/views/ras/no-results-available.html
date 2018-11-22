@@ -1,0 +1,31 @@
+{% extends "layout-2.html" %} {% set pageHeading = "Member’s results" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
+serviceName) }} {% endblock %} {% block content %} {% set pageHeading = "You have not uploaded a file" %}
+
+<main id="content" role="main">
+
+    {% include "includes/ras/phase_banner_beta.html" %}
+    {{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+    <!-- //////////////////////////////- -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            {{ macroPageHeader.pageHeader(pageHeading, pageSection) }}
+
+        </div>
+    </div>
+
+    <p>You need to <a href="bulk-upload">upload a file</a> before you can get any results.</p>
+
+    <!-- //////////////////////////////- -->
+
+    {% include "includes/ras/choose_else_button.html" %}
+
+    {% include "includes/ras/contactb.html" %}
+
+</main>
+
+	{% include "includes/ras/footer_script.html" %}
+
+{% endblock %}

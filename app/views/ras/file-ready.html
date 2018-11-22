@@ -1,0 +1,45 @@
+{% extends "layout-2.html" %}
+{% set pageHeading = "Your file is ready" %}
+
+{% block page_title %}
+{{ macroPageTitle.pageTitle(pageHeading, serviceName) }}
+{% endblock %}
+
+ {% set pageHeading = "The last file you uploaded is ready" %}
+
+{% block content %}
+
+{% set schemeMember = data['first--name-first'] + ' ' + data['last--name-last'] %}
+
+<main id="content" role="main">
+
+    {% include "includes/ras/phase_banner_beta.html" %}
+
+    {{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+	<!-- ////////////////////////////// -->
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			{{ macroPageHeader.pageHeader(pageHeading, pageSection) }}
+
+		</div>
+	</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<p><a href="residency-status-added-1-year.html">Download your file</a></p>
+		</div>
+	</div>
+
+	<!-- //////////////////////////////- -->
+
+	{% include "includes/ras/contactb.html" %}
+
+</main>
+
+	{% include "includes/ras/footer_script.html" %}
+
+{% endblock %}

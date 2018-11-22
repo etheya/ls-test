@@ -1,0 +1,69 @@
+{% extends "layout-2.html" %} {% set pageHeading = "Upload your file" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
+serviceName) }} {% endblock %} {% block content %} {% set pageHeading = "Upload a file" %}
+
+<main id="content" role="main">
+
+	<div style="margin-bottom: 8em;">
+
+		{% include "includes/ras/phase_banner_beta.html" %}
+
+		<div class="grid-row">
+			<div class="column-two-thirds">
+
+				{{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+				{# {% include "includes/ras/upload_errors_xp.html"	%} #}
+
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+    <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">There is a problem</h2>
+
+
+    <ul class="list error-summary-list">
+        <li><a id="quotationMarks" href="">CSV cannot contain quotation marks. Open the CSV in a text editor to check it.</a></li>
+    </ul>
+</div>
+
+				{{ macroPageHeader.pageHeader(pageHeading, pageSection) }}
+
+				<p>The file must be in CSV format. It cannot be more than 2MB in size.</p>
+
+			</div>
+		</div>
+
+		<div class="grid-row">
+			<div class="column-two-thirds ras-bottom-margin">
+
+				{% include "includes/ras/validate_file_upload.html" %}
+
+				<form method="post" class="form" onsubmit="return validateFileUpload()">
+
+					<div class="form-group form-group-error">
+
+						<span class="error-message" id="upload-csv-error">Select a CSV</span>
+
+						<p>
+							<input id="file-upload" type="file" name="datafile" size="50">
+						</p>
+
+					</div>
+
+					<p>
+						<a href="csv-file-guidance">Get help formatting your file</a>
+					</p>
+
+					{% import "macros/button.njk" as macroButton %} {{ macroButton.button(next = "file-uploaded",value = "Continue") }}
+
+				</form>
+
+			</div>
+
+		</div>
+
+		{% include "includes/ras/contactb.html" %}
+
+	</div>
+
+
+</main>
+
+{% include "includes/ras/footer_script.html" %} {% endblock %}

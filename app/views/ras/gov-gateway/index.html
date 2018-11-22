@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+    Sign in with your Government Gateway account - Anti-money laundering registration - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {# {% include "includes/ras/phase_banner_beta.html" %} #}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Sign in</h1>
+
+            <p>Enter your Government Gateway credentials to sign in. You received these when you created your HMRC online account.</p>
+
+            <form method="post">
+                <fieldset>
+                    <legend class="visually-hidden">Sign in with your Government Gateway account</legend>
+                    <div class="form-group">
+                        <label class="form-label" for="userId">User ID</label>
+                        <input class="form-control" type="text" id="userId" name="userId"  />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input class="form-control" type="password" id="password" name="password"  />
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <a href="../choose-option-to-get-residency-status" class="button">Sign in</a>
+                </div>
+            </form>
+
+            <h2 class="heading-medium">Problems signing in</h2>
+
+                <ul>
+                    <li><a href="#" onclick="return false;">Trying to file Self Assessment using GOV.UK Verify?</a></li>
+                    <li><a href="#" onclick="return false;">Don't have a Goverment Gateway account</a></li>
+                    <li><a href="#" onclick="return false;">Forgotten user ID</a></li>
+                    <li><a href="#" onclick="return false;">Forgotten passsword</a></li>
+                    <li><a href="#" onclick="return false;">Forgotten user ID and password</a></li>
+                    <li><a href="#" target="_blank" onclick="return false;">Get help from HMRC's automated assistant</a></li>
+                </ul>
+    {% include "includes/ras/contactb.html" %}
+        </div>
+    </div>
+
+</main>
+{% endblock %}

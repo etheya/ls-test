@@ -1,0 +1,51 @@
+{% extends "layout-2.html" %}
+{% set pageHeading = "Upload your file" %}
+
+{% block page_title %}
+{{ macroPageTitle.pageTitle(pageHeading, serviceName) }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/ras/phase_banner_beta.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			{{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+			<h1 class="heading-xlarge">You cannot upload another file at the moment</h1>
+			<p>The last file you uploaded is still being processed.</p>
+			<p>You can upload another file when the last one has finished processing. This can take up to 24 hours from when you uploaded
+				it.</p>
+		</div>
+	</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="grid-row">
+				<div class="column-two-thirds ras-top-margin">
+
+					{% if journeyName == "" and journeyName == 4 %}
+
+					<a href="what-do-you-want-to-doc?{{journeyUrl}}">
+						<input class="button" type="submit" value="Choose something else to do">
+					</a>
+
+					{% else %}
+
+					<a href="what-do-you-want-to-doc?{{journeyUrl}}">
+						<input class="button" type="submit" value="Choose something else to do">
+					</a>
+
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% include "includes/ras/contactb.html" %}
+
+</main>
+{% endblock %}

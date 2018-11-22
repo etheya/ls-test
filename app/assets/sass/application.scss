@@ -1,0 +1,204 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+@import 'patterns/check-your-answers';
+@import 'patterns/task-list';
+
+// Related items
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+.govuk-related-items {
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+  padding-top: 5px;
+
+  .heading-medium {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+  }
+
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.break {
+  display: block;
+
+}
+
+
+
+
+
+
+// RAS //
+a {
+    &.signout {
+        line-height: 30px;
+        float: right;
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        vertical-align: baseline;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.background-grey {
+    background-color:#DEE0E2;
+}
+
+.attachment-thumb {
+    position: relative;
+    float: left;
+    margin-top: 5px;
+    margin-left: -124px;
+    padding-bottom: 15px;
+}
+
+.thumbnail {
+    & img {
+        display: block;
+        width: 99px;
+        height: 140px;
+        background: #fff;
+        outline: 5px solid rgba(11, 12, 12, 0.1);
+        -webkit-box-shadow: 0 2px 2px rgba(11, 12, 12, 0.4);
+        -moz-box-shadow: 0 2px 2px rgba(11, 12, 12, 0.4);
+        box-shadow: 0 2px 2px rgba(11, 12, 12, 0.4);
+    }
+}
+
+.icon--file {
+    position: relative;
+    float: left;
+    margin-right: .7em;
+
+    & img {
+        display: block;
+        width: 30px;
+        height: 39%;
+        background: #fff;
+        margin-top: -8px;
+    }
+}
+
+.attachment--title {
+    margin-bottom: 2em;
+}
+
+.ras-top-margin {
+    margin-top: 1.1em;
+    }
+
+.ras-bottom-margin {
+
+    & p {
+        margin-bottom: 2em;
+    }
+}
+
+.ras-report-error {
+    margin-top: 3em;
+}
+
+.publication .sidebar-with-body {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.report-a-problem-toggle {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin-bottom: 30px;
+
+    a {
+        color: #6f777b !important;
+        text-decoration: underline !important;
+    }
+}
+
+.report-a-problem-container {
+    h2 {
+        font-family: "nta", Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        line-height: 1.2;
+        font-weight: 600;
+        margin: 1em 0;
+    }
+
+    label {
+        font-family: "nta", Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 16px;
+        line-height: 1.25;
+        padding: 0;
+        margin: 0 0 0.22em 0;
+        display: block;
+        font-weight: bold;
+    }
+
+    p {
+        font-family: "nta", Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+
+        line-height: 1.25;
+        padding-bottom: 1em;
+    }
+
+    input[type="text"] {
+        display: block;
+        font-family: "nta", Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        line-height: 1.25;
+        margin: 0 0 1em 0;
+        background-color: #f8f8f8;
+        border: 1px inset #bfc1c3;
+        padding: 0.3em 0 0.1em 0.4em;
+        width: 95%;
+    }
+
+    &.report-a-problem-inner.report-a-problem-content {
+        max-width: 35em;
+    }
+}
+
+.ras-div-table-divider {
+    border-bottom: 1px solid #bfc1c3;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+}
+
+.ras-align-right {
+    text-align: right;
+}
+
+.spacelarge {
+        margin-bottom: 1.1em;
+    }
+
+.xp-heading {
+    padding: 1em 0 2em 0;
+    border-top: 2px solid #DEE0E2;
+    color: #BFC1C3;
+}
+
+
+// *********** //

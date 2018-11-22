@@ -1,0 +1,58 @@
+{% extends "layout-2.html" %} {% set pageHeading = "Upload your file" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
+serviceName) }} {% endblock %} {% block content %}
+
+{% set pageHeading = "Upload a file" %}
+
+<main id="content" role="main">
+	{% include "includes/ras/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			{{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+			{% include "includes/ras/upload_errors.html" %}
+			{{ macroPageHeader.pageHeader(pageHeading, pageSection) }}
+
+			<p>The file must be in CSV format. It cannot be more than 2MB in size.</p>
+
+		</div>
+	</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds ras-bottom-margin">
+
+				{% include "includes/ras/validate_file_upload.html" %}
+
+				<form method="post" class="form" onsubmit="return validateFileUpload()">
+
+					<div class="form-group">
+
+						<span class="error-message visually-hidden" id="upload-csv-error">Select a CSV</span>
+
+						<label class="form-label visually-hidden" for="file-upload">
+							Upload a file
+						</label>
+
+						<p><input type="file" id="file-upload" name="datafile" size="50"></p>
+
+					</div>
+
+					<p><a href="csv-file-guidance">Get help formatting your file</a></p>
+
+					{% import "macros/button.njk" as macroButton %}
+					{{ macroButton.button(next = "file-uploaded",value = "Continue") }}
+
+				</form>
+
+		</div>
+
+	</div>
+
+	{% include "includes/ras/contactb.html" %}
+
+</main>
+
+	{% include "includes/ras/footer_script.html" %}
+
+{% endblock %}

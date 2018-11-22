@@ -1,0 +1,65 @@
+{% extends "layout-2.html" %} {% set pageHeading = "Download your results" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading, serviceName) }} {% endblock %} {% block content %} {% set schemeMember = data['first--name-first'] + '
+' + data['last--name-last'] %}
+
+<main id="content" role="main">
+
+
+    {% include "includes/ras/phase_banner_beta.html" %}
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            {{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+            {{ macroPageHeader.pageHeader(pageHeading, pageSection) }}
+
+            {% if upload == 'upload' %} {% set pageHeading = "There has been a problem uploading your file" %} {% else %} {% set pageHeading = "Get the residency status results from a file you have uploaded" %} {% endif%}
+   </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds" aria-labelledby="documents-title">
+
+            <div class="govuk-govspeak direction-ltr">
+                <section class="attachment embedded" id="attachment_1484006">
+
+                <div class="attachment--title">
+                    <div class="icon--file">
+
+                        <a aria-hidden="true" href="/public/documents/CY+1-upload-results-template_Jan-Mar.csv" download><img alt="" src="/public/images/icon-file-download.png"></a>
+
+                    </div>
+
+                    <div class="attachment-details">
+
+                        <p>
+                            <a aria-describedby="attachment-1484006-accessibility-help"
+                            href="/public/documents/CY+1-upload-results-template_Jan-Mar.csv">
+                            Residency-status-results.CSV</a>
+                        </p>
+
+                    </div>
+                </div>
+                <p>This results file is available to download until Sunday 14 April 2018 at 1:42pm.</p>
+                <p>You should save a copy of it. After you download it, we delete it from the service.</p>
+
+                </section>
+                        <h2 class="heading-medium">What you must do next</h2>
+
+                        <p>If no residency status is shown, and you have checked that everything is correct, the <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/national-insurance-enquiries-for-employees-and-individuals">member must contact HMRC</a> to update their personal details.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include "includes/ras/choose_else_button.html" %}
+
+            {% include "includes/ras/contactb.html" %}
+
+</main>
+
+	{% include "includes/ras/footer_script.html" %}
+
+{% endblock %}

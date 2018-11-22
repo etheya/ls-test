@@ -1,0 +1,55 @@
+{% extends "layout-2.html" %}
+
+{% set pageHeading = "What is their National Insurance number?" %}
+
+{% block page_title %}
+    {{ macroPageTitle.pageTitle(pageHeading, serviceName) }}
+{% endblock %}
+
+{% set schemeMember = data['first--name-first'] + ' ' + data['last--name-last'] %}
+{% set pageHeading = "What is " + schemeMember + "’s National Insurance number?" %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/ras/phase_banner_beta.html" %}
+
+    {{ macroBackButton.backButton( next = "member-name", value = "Back" ) }}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            {% include "includes/ras/errors.html" %}
+
+            <form method="post" class="form" onsubmit="return validateNINO()">
+
+                <fieldset class="inline">
+
+                    <legend>
+                        <span>{{ macroPageHeader.pageHeader(pageHeading) }}</span>
+                    </legend>
+
+                    {{ macroInput.input(
+                        data = data,
+                        label = "",
+                        id = "national-insurance",
+                        name = "national-insurance",
+                        hintInline = "For example, QQ 12 34 56 C",
+                        errorMessage = "Enter National Insurance number",
+                        value = "number"
+                    ) }}
+
+                </fieldset>
+
+                {% import "macros/button.njk" as macroButton %}
+                {{ macroButton.button(next = "member-date-of-birth-1-year",value = "Continue") }}
+
+            </form>
+
+        </div>
+    </div>
+
+    {% include "includes/ras/contactb.html" %}
+
+</main>
+{% endblock %}

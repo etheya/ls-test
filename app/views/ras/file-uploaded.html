@@ -1,0 +1,23 @@
+{% extends "layout-2.html" %} {% set pageHeading = "File uploaded succesfully" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
+serviceName) }} {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  {% include "includes/ras/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Your file has been uploaded</h1>
+
+      <p>It can take up to 24 hours to get the residency status results for all of the members. You will not be able to upload another file during this time.</p>
+
+      <p>You need to come back to this service to get the results. The results will be available on the uploaded file for 3 calendar days before being deleted.</p>
+
+    </div>
+  </div>
+
+  {% include "includes/ras/choose_else_button.html" %}
+  {% include "includes/ras/contactb.html" %}
+
+</main>
+
+{% include "includes/ras/footer_script.html" %} {% endblock %}

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Relief at source (RAS) look up service
+                <span class="heading-secondary">{{releaseVersion}}</span>
+            </h1>
+
+            <h2 class="heading-medium">UR Journeys</h2>
+            <ul class="list list-bullet">
+                <li><a href="xp3_1-service-guidance">Task 1</a></li>
+                {# <li><a href="xp3_1-choose-option-upload-2-year">Task 2</a></li> #}
+                <li><a href="xp3_1-choose-option-upload-1-year">Task 2</a></li>
+                <li><a href="xp4_1-choose-option-upload-1-year">Task 3a</a></li>
+                <li><a href="xp5_8-choose-option-problem">Task 3b</a></li>
+            </ul>
+
+            <h2 class="heading-medium">External pages</h2>
+            <ul class="list list-bullet">
+                <li><a href="service-guidance.html">service-guidance</a></li>
+                <li><a href="csv-file-guidance.html">csv-file-guidance</a></li><li><a href="gov-gateway">gov-gateway</a></li>
+                <li><a href="2sv-start">2sv-start</a></li>
+                <li><a href="choose-option-to-get-residency-status">choose-option-to-get-residency-status</a></li>
+            </ul>
+
+
+            <h2 class="heading-medium">Single search</h2>
+            <ul class="list list-bullet">
+                <li><a href="member-name-1-year.html">member-name-1-year</a></li>
+                <li><a href="member-national-insurance-number-1-year.html">member-national-insurance-number-1-year</a></li>
+                <li><a href="member-date-of-birth-1-year.html">member-date-of-birth-1-year</a></li>
+                <li><a href="member-residency-status-1-year.html">member-residency-status-1-year</a></li>
+                <li><a href="member-residency-status-2-year.html">member-residency-status-2-year</a></li>
+                <li><a href="no-residency-status-displayed.html">no-residency-status-displayed</a></li>
+                <li><a href="file-ready.html">file-ready</a></li>
+            </ul>
+
+            <h2 class="heading-medium">Bulk search</h2>
+            <ul class="list list-bullet">
+                <li><a href="upload-a-file.html">upload-a-file</a></li>
+                <li><a href="file-uploaded.html">file-uploaded</a></li>
+                <li><a href="cannot-upload-another-file.html">cannot-upload-another-file</a></li>
+                <li><a href="download-csv-results-1-year.html">download-csv-results-1-year</a></li>
+                <li><a href="download-csv-results-2-year.html">download-csv-results-2-year</a></li>
+                <li><a href="exit-survey">exit-survey</a></li>
+            </ul>
+
+            <h2 class="heading-medium">Problem pages</h2>
+            <ul class="list list-bullet">
+                <li><a href="wrong-login-not-authorised">Wrong login / not authorised</a></li>
+                <li><a href="file-not-available">file not available (more than one download)</a></li>
+                <li><a href="service-unavailable">service-unavailable</a></li>
+                <li><a href="technical-problem">technical-problem</a></li>
+            </ul>
+
+
+                <!-- ///////// EXPERIMENTAL ////////// -->
+            <h2 class="heading-medium">Experimental pages</h2>
+            <ul class="list list-bullet">
+                {# <li><a href="xp1-choose-option-to-get-residency-status">xp1-choose-option-to-get-residency-status</a></li> #}
+                <li><a href="xp3_1-choose-option-upload-1-year">xp3_1-choose-option-upload-1-year</a></li>
+                <li><a href="xp3_2-upload-a-csv">xp3_2-upload-a-csv</a></li>
+                <li><a href="xp3_3-file-uploaded">xp3_3-file-uploaded</a></li>
+                <li><a href="xp3_4-choose-option-processing">xp3_4-choose-option-processing</a></li>
+                <li><a href="xp3_5-choose-option-file-ready">xp3_5-choose-option-file-ready</a></li>
+                <li><a href="xp3_6-csv-results-1-year">xp3_6-csv-results-1-year</a></li>
+                <li><a href="xp3_8-choose-option-problem">xp3_8-choose-option-problem</a></li>
+                <li><a href="xp3_7-csv-results-2-year">xp3_7-csv-results-2-year</a></li>
+                <li><a href="xp3_member-residency-status-1-year">xp3_member-residency-status-1-year</a></li>
+                <li><a href="xp3_member-residency-status-2-year">xp3_member-residency-status-2-year</a></li>
+                <li><a href="xp3_upload-a-file-error">xp3_upload-a-file-error </a></li>
+                <li><a href="https://govuk-prototype-kit.herokuapp.com/docs/examples/task-list-page#">GOV.UK pattern: Task List</a></li>
+                <li><a href="http://govuk-elements.herokuapp.com/typography/example-details-summary/">GOV.UK pattern: Summary content</a></li>
+            </ul>
+
+        </div>
+  </div>
+</main>
+
+{% endblock %}

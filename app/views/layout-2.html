@@ -1,0 +1,77 @@
+{% extends "govuk_template.html" %}
+
+{% import "macros/page-title.njk" as macroPageTitle %}
+{% import "macros/page-header.njk" as macroPageHeader %}
+{% import "macros/anchor.njk" as macroAnchor %}
+{% import "macros/button.njk" as macroButton %}
+{% import "macros/updatebutton.njk" as macroButton %}
+{% import "macros/input-field.njk" as macroInput %}
+{% import "macros/input-checkbox.njk" as macroCheckbox %}
+{% import "macros/input-checkboxes.njk" as macroCheckboxes %}
+{% import "macros/input-radio.njk" as macroRadio %}
+{% import "macros/input-radio-group.njk" as macroRadioGroup %}
+{% import "macros/input-textarea.njk" as macroTextarea %}
+{% import "macros/date.njk" as macroDate %}
+{% import "macros/check-your-answers.njk" as macroCheckYourAnswers %}
+{% import "macros/details-summary.njk" as macroDetails %}
+{% import "macros/panel.njk" as macroPanel %}
+{% import "macros/progress-step.njk" as macroProgressStep %}
+{% import "macros/back-button.njk" as macroBackButton %}
+
+{% set schemeMember = 'John Smith' %}
+
+{% block head %}
+  {% include "includes/ras/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block proposition_header %}
+
+<!--   <div class="header-proposition">
+    <div class="content">
+      <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+      <nav id="proposition-menu">
+ -->        <!-- <a href="/" id="proposition-name">
+          {# Set serviceName in config.js. Use a block to override on a page. #} -->
+            {% include "includes/ras/propositional_navigation_signout.html" %}
+          <!-- {% block service_name %}
+            {% if serviceName %} {{ serviceName }} {% endif %}
+          {% endblock %}
+        </a> -->
+        <!--
+        <ul id="proposition-links">
+          <li><a href="url-to-page-1" class="active">Navigation item #1</a></li>
+          <li><a href="url-to-page-2">Navigation item #2</a></li>
+        </ul>
+        -->
+<!--       </nav>
+    </div>
+  </div>
+ -->
+
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block footer_support_links %}
+  {% if useAutoStoreData %}
+    <ul>
+      <li>
+        <a href="/prototype-admin/clear-data">Clear data</a>
+      </li>
+    </ul>
+  {% endif %}
+{% endblock %}
+
+{% block body_end %}
+  {% block scripts %}
+    {% include "includes/ras/scripts.html" %}
+    {% block page_scripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

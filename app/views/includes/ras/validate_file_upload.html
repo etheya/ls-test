@@ -1,0 +1,67 @@
+
+<script>
+// to start with, show page without errors
+HideAllErrors();
+
+// Validate file input on continue click
+function validateFileUpload() {
+    HideAllErrors();
+
+    var filename = $('input[type=file]').val().split('\\').pop().split('.')[0];
+    
+    var valid = false;
+    switch (filename) {
+        case '':
+            ShowError('#chooseFile');
+            break;
+        case 'notCsv':
+            ShowError('#fileNotCSV');
+            break;
+        case 'empty':
+            ShowError('#emptyCSV');
+            break;
+        case 'problemUploading':
+            ShowError('#problemUploading');
+            break;
+        case 'tooLarge':
+            ShowError('#fileTooLarge');
+            break;
+        case 'file_1':
+            ShowError('#quotationMarks');
+            break;
+        default:
+            valid = true;
+            NoHighlightError();
+            break;
+    }    
+
+    return valid;
+}
+
+function ShowError(errorLabel) {
+    $(errorLabel).show();
+    $('.error-summary').show();
+    $('.error-summary').focus();
+   HighlightError();
+}
+
+function HideAllErrors() {
+    $('.error-summary').hide();
+    $('#fileNotCSV').hide();
+    $('#chooseFile').hide();
+    $('#emptyCSV').hide();
+    $('#problemUploading').hide();
+    $('#fileTooLarge').hide();
+    $('#quotationMarks').hide();
+}
+
+function HighlightError() {
+    $("div.form-group").addClass('form-group-error');
+    $('#upload-csv-error').removeClass('visually-hidden');
+}
+
+function NoHighlightError() {
+    $("div.form-group.form-group-error").removeClass('form-group-error');
+}
+
+</script>

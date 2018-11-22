@@ -1,0 +1,56 @@
+{% extends "layout-2.html" %} {% set pageHeading = "Choose an option to get a residency status" %} {% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
+serviceName) }} {% endblock %} {% block content %} {% set schemeMember = data['first--name-first'] + ' ' + data['last--name-last']%}
+{% set pageHeading = "Choose an option to get a residency status" %}
+
+<main id="content" role="main">
+
+
+{# ////////////////   UPLOAD A CSV   //////////////// #}
+
+
+	{% set pageHeading = "Upload a file" %}
+	{% include "includes/ras/phase_banner_beta.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			{{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+			{% include "includes/ras/upload_errors_xp.html" %}
+			{{ macroPageHeader.pageHeader(pageHeading, pageSection) }}
+
+			<p>The file must be in CSV format. It cannot be more than 2MB in size.</p>
+
+		</div>
+	</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds ras-bottom-margin">
+
+				{% include "includes/ras/validate_file_upload.html" %}
+
+				<form method="post" class="form" onsubmit="return validateFileUpload()">
+
+					<div class="form-group">
+						<label id="upload-error">
+							<span class="error-message visually-hidden" id="upload-csv-error">Select a CSV</span>
+						</label>
+						<p><input id="file-upload" type="file" name="datafile" size="50"></p>
+
+					</div>
+
+					<p><a href="xp5_1-csv-file-guidance">Get help formatting your file</a></p>
+
+					{% import "macros/button.njk" as macroButton %}
+					{{ macroButton.button(next = "xp5_3-file-uploaded",value = "Continue") }}
+
+				</form>
+
+		</div>
+
+	</div>
+
+	{% include "includes/ras/contactb.html" %}
+
+</main>
+{% endblock %}

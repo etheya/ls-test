@@ -1,0 +1,64 @@
+{#
+    hint = false        // tie an external hint to the first option
+    hintInline = "",    // tie an inline hint to the input
+    id = "",            // `data-target` value
+    label = "",         // item label
+    name = "",          // `name` value
+    value = ""          // item identifier
+
+    {{ macroInput.input(
+        label = "SOME_TEXT",
+        name = "section--sub-section",
+        value = "Yes",
+        hint = true
+    ) }}
+#}
+
+{% macro input (
+    classes = "",
+    data = {},
+    hidden = false,
+    hint = false,
+    hintInline = "",
+    id = "",
+    label = "",
+    labelHidden = false,
+    max = "",
+    maxlength = "",
+    min = "",
+    name = "",
+    pattern = "",
+    target = "",
+    type = "text",
+    errorMessage = "",
+    value = ""
+) %}
+    <div class="form-group{% if hidden %} panel panel-border-narrow js-hidden{% endif %}" id="{{ id }}">
+
+        <label id="{{ name }}-label" class="form-label{% if labelHidden %} visually-hidden{% endif %}" for="{{ name }}-{{ value }}">
+            {{label}}
+            
+            {% if hintInline %}
+            <span class="form-hint" id="{{ name }}-hint">{{ hintInline }}</span>
+            {% endif %}
+
+            {% if errorMessage %}
+            <span class="error-message visually-hidden" id="{{ name }}-error">{{ errorMessage }}</span>
+            {% endif %}
+
+        </label>
+
+        <input class="form-control{% if classes %} {{ classes }}{% endif %}" 
+            type="{{ type }}"
+                {% if min %}min="{{ min }}"{% endif %}
+                {% if max %} max="{{ max }}"{% endif %}
+                {% if maxlength %} maxlength="{{ maxlength }}"{% endif %}
+                {% if pattern %} pattern="{{ pattern }}"{% endif %} 
+            name="{{ name }}-{{ value }}" 
+            id="{{ name }}-{{ value }}" 
+            value="{{ data[name + '-' + value] }}"
+            {% if hint %} aria-describedby="{{ name }}-hint"{% endif %}
+        />
+
+    </div>
+{% endmacro %}

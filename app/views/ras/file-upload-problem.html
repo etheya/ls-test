@@ -1,0 +1,44 @@
+{% extends "layout-2.html" %}
+
+{% set pageHeading = "File upload has failed" %}
+
+{% block page_title %}
+    {{ macroPageTitle.pageTitle(pageHeading, serviceName) }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/ras/phase_banner_beta.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      {{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+      <h1 class="heading-xlarge">There has been a problem uploading your file</h1>
+      <!--<h3 class="heading-medium">This could be caused by:</h3>
+      <ul class="list list-bullet">
+        <li>A system timeout</li>
+        <li>A technical error</li>
+      </ul>-->
+      <p>You should upload your file again.</p>
+      <p>If this problem continues, you should check the file you are trying to upload. You can also try to create a new file and then upload that new copy.</p>
+      </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div style="padding-top: 25px;">
+
+              <a href="/{{url}}/bulk-upload_default?{{journeyUrl}}">  <input class="button" type="submit" value="Return to upload a file"></a>
+
+      </div>
+    </div>
+  </div>
+
+  {% include "includes/ras/contactb.html" %}
+
+</main>
+{% endblock %}

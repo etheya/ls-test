@@ -1,0 +1,17 @@
+{#  Call with defaults: {{ macroLinkBack.back() }}
+
+    macroBackButton.backButton(
+    next = "",
+    value = ""
+    )
+
+#}
+
+{% macro backButton (
+    next = "",
+    value = ""
+) %}
+
+<a href="{{ next }}" class="link-back">{{value}}</a>
+  
+{% endmacro %}

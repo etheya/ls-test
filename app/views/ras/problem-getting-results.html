@@ -1,0 +1,40 @@
+{% extends "layout-2.html" %}
+{% set pageHeading = "Member’s results" %}
+{% block page_title %} {{ macroPageTitle.pageTitle(pageHeading,
+serviceName) }}
+{% endblock %}
+{% block content %}
+ {% set schemeMember = data['first--name-first'] + ' ' + data['last--name-last']
+%} {% set pageHeading = "There has been a problem getting the results" %}
+
+<main id="content" role="main">
+
+    {% include "includes/ras/phase_banner_beta.html" %}
+    {{ macroBackButton.backButton( next = "choose-option-to-get-residency-status", value = "Back" ) }}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            {{ macroPageHeader.pageHeader(pageHeading, pageSection) }}
+		</div>
+	</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+        <p>Check that your <a href="/sprint35/csv-file-guidance">file is formatted correctly</a> and then try uploading again.</p>
+
+		</div>
+	</div>
+
+	<!-- //////////////////////////////- -->
+
+	{% include "includes/ras/choose_else_button.html" %}
+
+	{% include "includes/ras/contactb.html" %}
+
+</main>
+
+	{% include "includes/ras/footer_script.html" %}
+
+{% endblock %}

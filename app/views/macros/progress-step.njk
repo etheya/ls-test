@@ -1,0 +1,24 @@
+{% macro progressStep(
+    assistedTime = "",
+    averageTime = "",
+    complete = false,
+    description = "",
+    heading = "",
+    href = "",
+    statusComplete = "This section has been completed.",
+    statusIncomplete = "This section needs completing and will take between " + averageTime + " and " + assistedTime + " minutes."
+) %}
+<li><a href="{{ href }}" class="progress-step{% if complete %} progress-step__complete{% endif %}" aria-label="This section is {{ heading }}. {{ decription }}{{ statusComplete if complete else statusIncomplete }}">
+    <div class="grid-layout column-two-thirds progress-step--details" aria-hidden="true">
+        <h2 class="heading-small">{{ heading }}</h2>
+        <p>{{ description }}</p>
+        <p class="visuallyhidden">{{ statusComplete if complete else statusIncomplete }}</p>
+        <!-- <p class="progress-step__edit font-xsmall">Edit</p> -->
+    </div>
+    <div class="grid-layout column-one-third progress-step--status{% if complete %} progress-step__complete{% endif %}" aria-hidden="true">
+        {% if complete == false %}<div class="column-two-thirds progress-step--status-time">
+            <p class="font-xsmall"> Between <span class="heading-small">{{ averageTime + " and " + assistedTime }} minutes</span> to complete</p>
+        </div>{% endif %}
+    </div>
+</a></li>
+{% endmacro %}
