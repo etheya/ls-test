@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% set pageHeading = "Are you married or in a civil partnership?" %}
+{% set pageSection = "Check your eligibility" %}
+
+{% block page_title %}
+    {{ macroPageTitle.pageTitle(pageHeading, pageSection) }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/marallow/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            {% include "includes/marallow/back-new.html" %}
+            {{ macroPageHeader.pageHeader(pageHeading) }}
+
+            <form method="post" class="form">
+                <fieldset class="inline">
+                    <legend class="visuallyhidden">{{ pageHeading }}</legend>
+
+                    <div class="form-group">
+                        <div class="multiple-choice">
+                            <input id="yes" type="radio" name="ma--married-partnership" value="Yes, redirect(date-of-birth-check)" {{ checked("ma--married-partnership", "Yes") }} />
+                            <label for="yes">Yes</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="no" type="radio" name="ma--married-partnership" value="No, redirect(not-eligible)" {{ checked("ma--married-partnership", "No") }} />
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+
+                {{ macroButton.button() }}
+            </form>
+
+
+        </div>
+    </div>
+</main>
+{% endblock %}
