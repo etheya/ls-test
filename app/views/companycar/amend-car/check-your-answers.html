@@ -1,0 +1,208 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+
+  GOV.UK prototype kit
+
+{% endblock %}
+
+{% import '_globals.html' as globals %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <!-- Headings -->
+      <h1 class="heading-large">
+        What would you like to change?
+      </h1>
+      <h1 class="heading-medium">Your car</h1>
+      <p class="heading-small">Vauxhall Corsa provided by Accenture</p>
+
+      <p>{{data['username']}}</p>
+
+      <!-- <p>{{globals.employer}}</p> -->
+
+      <!-- Body with table modifiers -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+
+        <!-- Date provided -->
+        <div>
+          <dt class="cya-question">
+            Date provided
+          </dt>
+          <dd class="cya-answer">
+             {% if data['car-day-string'] | length == "0" %} {{data['car-day']}} {% endif %} {% if data['car-day-string'] | length != "0" %} {{data['car-day-string']}} {% endif %}
+             {{data['car-month-string']}} {{data['car-year']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="when-did-you-get-car?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Date registered with DVLA -->
+        <div>
+          <dt class="cya-question">
+            Date registered with DVLA
+          </dt>
+          <dd class="cya-answer">
+            {{data['reg-day']}} {{data['reg-month-string']}} {{data['reg-year']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="when-was-car-registered-with-DVLA?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Make and model -->
+        <div>
+          <dt class="cya-question">
+            Make and model
+          </dt>
+          <dd class="cya-answer">
+            {{data['car-make-model']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="car-make-model?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Fuel Type -->
+        <div>
+          <dt class="cya-question">
+            Fuel type
+          </dt>
+          <dd class="cya-answer">
+            {{data['fueltype']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="car-fuel-type?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+
+        </div>
+
+        <!-- Engine Size -->
+        <div>
+          {% if (data['enginesize-group']  == "1,400cc or less") or (data['enginesize-group'] == "1,401cc to 2,000cc") or (data['enginesize-group'] == "2,001cc or more") %}
+          <dt class="cya-question">
+            Engine size
+          </dt>
+          <dd class="cya-answer">
+            {{data['enginesize-group']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="car-engine-size?edit=true">Change<span class="visually-hidden"> name</span></a>
+            <a href="/renew/name/edit"></a>
+          </dd>
+          {% endif %}
+        </div>
+
+        <!-- Emission Figure -->
+        <div>
+          {% if data['otherco2emissions'] | length != "0" %}
+          <dt class="cya-question">
+            Emission figure
+          </dt>
+          <dd class="cya-answer">
+            {{data['otherco2emissions']}}g CO2/km
+          </dd>
+          <dd class="cya-change">
+            <a href="car-emissions?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+          {% endif %}
+        </div>
+
+        <!-- List price (including VAT and accessories) -->
+        <div>
+          <dt class="cya-question">
+            List price
+          </dt>
+          <dd class="cya-answer">
+            £{{data['car-list-price']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="car-list-price?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Salary Sacrifice -->
+        <div>
+          {% if data['salarysacrifice-group'] == "Yes" %}
+          <dt class="cya-question">
+            Salary sacrifice
+          </dt>
+          <dd class="cya-answer">
+            {{data['salarysacrifice-group']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="do-you-pay-towards-car?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+          {% endif %}
+        </div>
+
+        <!-- Salary Sacrifice -->
+        <!-- Amount -->
+        <div>
+          {% if data['ss-yes'] | length != "0" %}
+          <dt class="cya-question">
+            Salary sacrifice amount a year
+          </dt>
+          <dd class="cya-answer">
+            £{{data['ss-yes']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="do-you-pay-towards-car?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+          {% endif %}
+        </div>
+
+        <!-- When you use the car for your own private use, does your employer pay for the fuel? (fuel benefit) -->
+        <div>
+          <dt class="cya-question">
+            Fuel provided for private use
+          </dt>
+          <dd class="cya-answer">
+            {{data['employer-fuel-group']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="does-employer-pay-fuel?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Date fuel allowance began (this date is initially the same date as the date provided) -->
+        <div>
+          <dt class="cya-question">
+            Date fuel benefit began
+          </dt>
+          <dd class="cya-answer">
+             {% if data['fuel-benefit-start-day'] | length == "0" %} {{data['car-day']}} {% endif %} {% if data['fuel-benefit-start-day'] | length != "0" %} {{data['fuel-benefit-start-day']}} {% endif %}
+             {{data['fuel-benefit-start-month-string']}} {{data['fuel-benefit-start-year']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="when-did-you-get-car?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <br>
+      <!-- <a class="button" href="amend-check-your-answers" role="button">Send</a> -->
+      <p><a href="javascript:history.go(-1)">Cancel</a></p>
+      <br>
+
+      <p><a href="amend-check-your-answers">Go to check your answers page (prototype purposes)</a></p>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+
+
+
+{% endblock %}

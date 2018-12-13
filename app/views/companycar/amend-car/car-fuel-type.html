@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="car-make-model">Back</a>
+
+      <h1 class="heading-large">What fuel does the car use?</h1>
+
+      <form action="car-fuel-type" method="post" class="form">
+        <div class="form-group">
+          <fieldset data-required data-error="Select your car’s fuel type">
+            <legend id="fuel-type"></legend>
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="fueltype" value="Diesel">
+              <label for="radio-1">Diesel (excluding hybrid and cars which meet the RDE2 emissions standards)</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-2" type="radio" name="fueltype" value="Electric">
+              <label for="radio-2">Electricity only, or other zero-emission technology</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-3" type="radio" name="fueltype" value="Petrol, hybrid or other">
+              <label for="radio-3">Petrol, hybrid (including diesel-hybrid and diesel cars which meet the RDE2 standards), or other fuel</label>
+            </div>
+          </fieldset>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" class="button" value="Continue">
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+
+
+  </main>
+
+  {% endblock %}

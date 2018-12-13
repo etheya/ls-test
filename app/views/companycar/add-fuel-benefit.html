@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block page_title %} GOV.UK prototype kit {% endblock %}
+
+{% block content %}
+
+
+
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="../sprint3/details">Back</a>
+
+      <h1 class="heading-xlarge">Add a fuel benefit</h1>
+      <h1 class="heading-medium">Your current car</h1>
+      <p class="heading-small">Vauxhall Corsa provided by Accenture</p>
+      <!-- <h1 class="heading-medium">Vauxhall Corsa provided by Accenture</h1> -->
+      <!-- <form action="3get_car_date" method="post" class="form"> -->
+
+      <h1 class="heading-large">When you use the car for your own private use, does your employer pay for the fuel?</h1>
+
+      <form action="check-your-answers" method="post" class="form">
+        <div class="form-group inline">
+          <fieldset data-required data-error="Select yes if your employer pays for the fuel for the private use of the car">
+            <legend></legend>
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="add-fuel-benefit-group" value="Yes">
+              <label for="radio-1">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-2" type="radio" name="add-fuel-benefit-group" value="No">
+              <label for="radio-2">No</label>
+            </div>
+            </div>
+
+          </fieldset>
+          <div class="form-group">
+            <input type="submit" class="button" value="Continue">
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+
+{% endblock %}

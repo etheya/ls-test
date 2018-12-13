@@ -1,0 +1,65 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+
+      <a class="link-back" href="does-employer-pay-fuel.html">Back</a>
+
+      <!-- <h1 class="heading-large">Do you pay anything to your employer for private use of the car?</h1> -->
+
+      <form action="check-your-answers" method="post" class="form">
+
+        <div class="form-group inline">
+          <fieldset data-required data-error="Select yes if you pay anything to your employer for private use of the car">
+            <h1 class="heading-large">Do you pay anything to your employer for private use of the car?</h1>
+            <legend id="private-car-use"></legend>
+            <div class="multiple-choice" data-target="ptc-yes-amount-reveal">
+              <input id="pcu-yes" type="radio" name="private-use-group" value="Yes" {{ checked( "private-use-group", "Yes")}}>
+              <label for="radio-1">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="pcu-no" type="radio" name="private-use-group" value="No" {{ checked( "private-use-group", "No")}}>
+              <label for="radio-2">No</label>
+            </div>
+          </fieldset>
+
+          <div class="panel panel-border-narrow js-hidden" id="ptc-yes-amount-reveal">
+            <!-- <fieldset data-required data-error="Enter how much you paid of your salary, before tax, towards your car"> -->
+            <label class="form-label" for="ptc-yes-amount">How much?</label>
+            <br>
+            <span>£</span>
+            <input class="form-control short-text-field" name="ptc-yes-amount" type="text" id="ptc-yes-amount" value="{{data['ptc-yes-amount']}}">
+            <br><br>
+            <div class="multiple-choice">
+              <input id="radio-inline-1" type="radio" name="private-use-frequency-add" value="a week" {{ checked( "private-use-frequency-add", "a week")}}>
+              <label for="radio-inline-1">a week</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-inline-2" type="radio" name="private-use-frequency-add" value="a month" {{ checked( "private-use-frequency-add", "a month")}}>
+              <label for="radio-inline-2">a month</label>
+            </div>
+          </div>
+
+          <!-- </fieldset> -->
+        </div>
+
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+</main>
+
+{% endblock %}

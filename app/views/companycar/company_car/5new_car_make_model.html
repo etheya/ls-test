@@ -1,0 +1,44 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form action="6fuel_type" method="post" class="form">
+
+        <a class="link-back" href="4car_reg">Back</a>
+
+        <!-- <div class="form-group">
+        <fieldset data-required data-error="Cannot be blank">
+        <h1 class="heading-large">What is the car’s make and model?</h1>
+        <input id="car-model" class="form-control" name="car-make-model" type="text" value="{{data['car-make-model']}}">
+      </fieldset>
+    </div> -->
+        <div class="form-group">
+          <fieldset data-required data-error="Enter your car’s make and model">
+            <h1 class="heading-large">What is the car’s make and model?</h1>
+            <label class="heading-large" for="car-model">
+        </label>
+            <input id="car-model" class="form-control" name="car-make-model" type="text" value="{{data['car-make-model']}}">
+          </fieldset>
+        </div>
+
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+
+
+
+
+
+</main>
+
+{% endblock %}

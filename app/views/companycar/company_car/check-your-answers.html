@@ -1,0 +1,184 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <!-- Headings -->
+      <h1 class="heading-large">
+        Check your answers before sending your application
+      </h1>
+      <h2 class="heading-medium">
+        Personal details
+      </h2>
+
+      <!-- Body with table modifiers -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+
+        <!-- Employer -->
+        <div>
+          <dt class="cya-question">
+            Employer
+          </dt>
+          <dd class="cya-answer">
+            Accenture
+          </dd>
+          <dd class="cya-change">
+            <a href="2select_employer?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Date provided -->
+        <div>
+          <dt class="cya-question">
+            Date provided
+          </dt>
+          <dd class="cya-answer">
+            {{data['car-day']}} {{data['car-month-string']}} {{data['car-year']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="3get_car_date?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Date registered with DVLA -->
+        <div>
+          <dt class="cya-question">
+            Date registered with DVLA
+          </dt>
+          <dd class="cya-answer">
+            {{data['reg-day']}} {{data['reg-month-string']}} {{data['reg-year']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="4car_reg?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Make and model -->
+        <div>
+          <dt class="cya-question">
+            Make and model
+          </dt>
+          <dd class="cya-answer">
+            {{data['car-make-model']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="5new_car_make_model?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Fuel Type -->
+        <div>
+          <dt class="cya-question">
+            Fuel type
+          </dt>
+          <dd class="cya-answer">
+            {{data['fueltype']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="6fuel_type?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Engine Size -->
+        <div>
+          <dt class="cya-question">
+            Engine size
+          </dt>
+          <dd class="cya-answer">
+            {{data['enginesize-group']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="7engine_size?edit=true">Change<span class="visually-hidden"> name</span></a>
+            <a href="/renew/name/edit"></a>
+          </dd>
+        </div>
+
+        <!-- Emission Figure -->
+        <div>
+          <dt class="cya-question">
+            Emission figure
+          </dt>
+          <dd class="cya-answer">
+            {{data['otherco2emissions']}}g CO2/km
+          </dd>
+          <dd class="cya-change">
+            <a href="8co2?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- List price (including VAT and accessories) -->
+        <div>
+          <dt class="cya-question">
+            List price
+          </dt>
+          <dd class="cya-answer">
+            £{{data['car-list-price']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="9car_cost?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Salary Sacrifice -->
+        <div>
+          <dt class="cya-question">
+            Salary sacrifice
+          </dt>
+          <dd class="cya-answer">
+            {{data['salarysacrifice-group']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="10sal_sacr?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Did you pay anything towards the car -->
+        <div>
+          <dt class="cya-question">
+            Did you pay anything towards the car?
+          </dt>
+          <dd class="cya-answer">
+            {{data['payanythingforcar-group']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="11pay_employer?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Fuel for private use -->
+        <div>
+          <dt class="cya-question">
+            Fuel for private use
+          </dt>
+          <dd class="cya-answer">
+            {{data['employer-fuel-group']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="12private_use_fuel?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+        <!-- Do you pay anything to your employer for private use of the car -->
+        <div>
+          <dt class="cya-question">
+            Do you pay anything to your employer for private use of the car?
+          </dt>
+          <dd class="cya-answer">
+            {{data['private-use-group']}}
+          </dd>
+          <dd class="cya-change">
+            <a href="13pay_for_private_use?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+      </dl>
+      <br>
+      <a class="button" href="15Done" role="button">Submit</a>
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

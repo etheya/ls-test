@@ -35,4 +35,13 @@ router.post('*', function (req, res, next) {
 
 // add your routes here
 
+
+// router.use('/company_car', require('./views/company_car/routes'));
+// router.use('/replace-existing-car', require('./views/replace-existing-car/routes'));
+// router.use('/usability-testing-changes', require('./views/usability-testing-changes/routes'));
+// router.use('/amend-car', require('./views/amend-car/routes'));
+
+
+
+
 module.exports = router

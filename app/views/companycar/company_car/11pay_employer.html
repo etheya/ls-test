@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="10sal_sacr.html">Back</a>
+
+      <form action="12private_use_fuel" method="post" class="form">
+        <div class="form-group inline">
+          <fieldset data-required data-error="Select yes if you pay anything towards the car">
+            <h1 class="heading-large">Do you pay anything towards the car?</h1>
+            <span class="form-hint">This includes accessories.</span>
+            <br>
+            <legend id="pay-towards-car"></legend>
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="payanythingforcar-group" value="Yes" {{ checked("payanythingforcar-group", "Yes")}}>
+              <label for="radio-1">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="payanythingforcar-group" value="No" {{ checked("payanythingforcar-group", "No")}}>
+              <label for="radio-2">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        </fieldset>
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+    </div>
+
+
+    </form>
+
+
+
+
+  </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}

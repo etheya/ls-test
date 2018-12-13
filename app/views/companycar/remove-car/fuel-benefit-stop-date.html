@@ -1,0 +1,198 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="old-car-date">Back</a>
+
+      <h1 class="heading-xlarge">Remove your company car</h1>
+      <h1 class="heading-medium">Your old car</h1>
+      <p class="heading-small">Vauxhall Corsa provided by Accenture</p>
+      <!-- <h1 class="heading-medium">Vauxhall Corsa provided by Accenture</h1> -->
+      <!-- <form action="3get_car_date" method="post" class="form"> -->
+
+      <form action="check-your-answers" method="post" class="form">
+        <div class="form-group inline">
+          <fieldset data-required data-error="Enter the date the fuel benefit for this car stopped">
+            <h1 class="heading-large">When did the fuel benefit for this car stop?</h1>
+
+            <legend id="fuel-benefit-stop-choice"></legend>
+            <div class="multiple-choice">
+              <input id="fb-yes" type="radio" name="fuel-benefit-group" value="It stopped when you gave the car back" {{ checked( "fuel-benefit-group", "Yes")}}>
+              <label for="radio-1">It stopped when you gave the car back</label>
+            </div>
+            <div class="multiple-choice" data-target="fb-yes-reveal">
+              <input id="fb-no" type="radio" name="fuel-benefit-group" value="It stopped on" {{ checked( "fuel-benefit-group", "No")}}>
+              <label for="radio-2">It stopped on...</label>
+            </div>
+          </fieldset>
+
+
+          <br>
+          <div class="panel panel-border-narrow js-hidden" id="fb-yes-reveal">
+            <span class="form-hint">For example, 12 6 2017</span>
+            <br>
+            <div class="form-date">
+
+              <div class="form-group form-group-day">
+                <label for="back-day">Day</label>
+                <input class="form-control" id="fbstopday" name="fb-stop-day" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint" value="{{data['fb-stop-day']}}"></input>
+                <input type="hidden" id="fbdaystring" name="fb-day-string"/>
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="stop-month">Month</label>
+                <input class="form-control" id="stopmonth" name="stop-month" type="number" pattern="[0-9]*" min="0" max="12" value="{{data['stop-month']}}"></input>
+                <input type="hidden" id="stopmonthstring" name="stop-month-string"/>
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="back-year">Year</label>
+                <input class="form-control" id="fbstoppedyear" name="fb-stopped-year" type="text" pattern="[0-9]*" min="0" max="2016" value="{{data['fb-stopped-year']}}"></input>
+              </div>
+
+            </div>
+          </div>
+        <!-- </fieldset> -->
+        </div>
+
+
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+<script type="text/javascript">
+
+function evaluateDate(userInput) {
+
+  var monthString = ''
+
+  switch (userInput) {
+    case '1':
+    case '01':
+      monthString = 'January'
+      break
+    case '2':
+    case '02':
+      monthString = 'February'
+      break
+    case '3':
+    case '03':
+      monthString = 'March'
+      break
+    case '4':
+    case '04':
+      monthString = 'April'
+      break
+    case '5':
+    case '05':
+      monthString = 'May'
+      break
+    case '6':
+    case '06':
+      monthString = 'June'
+      break
+    case '7':
+    case '07':
+      monthString = 'July'
+      break
+    case '8':
+    case '08':
+      monthString = 'August'
+      break
+    case '9':
+    case '09':
+      monthString = 'September'
+      break
+    case '10':
+      monthString = 'October'
+      break
+    case '11':
+      monthString = 'November'
+      break
+    case '12':
+      monthString = 'December'
+      break
+  }
+  $('#stopmonthstring').val(monthString)
+}
+
+$( document ).ready(function() {
+    evaluateDate($( "#stopmonth" ).val())
+})
+
+$( "#stopmonth" ).on( "input", function() {
+  var userInput = $(this).val()
+  evaluateDate(userInput)
+})
+
+</script>
+
+<script type="text/javascript">
+
+function evaluateDay(userInput) {
+
+  var fbString = ''
+
+  switch (userInput) {
+    case '01':
+      fbString = '1'
+      break
+    case '02':
+      fbString = '2'
+      break
+    case '03':
+      fbString = '3'
+      break
+    case '04':
+      fbString = '4'
+      break
+    case '05':
+      fbString = '5'
+      break
+    case '06':
+      fbString = '6'
+      break
+    case '07':
+      fbString = '7'
+      break
+    case '08':
+      fbString = '8'
+      break
+    case '09':
+      fbString = '9'
+      break
+    default:
+      fbString = ''
+      break
+  }
+  $('#fbdaystring').val(fbString)
+}
+
+$( document ).ready(function() {
+    evaluateDay($( "#fbstopday" ).val())
+})
+
+$( "#fbstopday" ).on( "input", function() {
+  var userInput = $(this).val()
+  evaluateDay(userInput)
+})
+
+</script>
+
+{% endblock %}

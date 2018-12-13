@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form action="9car_cost" method="post" class="form">
+        <a class="link-back" href="8co2.html">Back</a>
+
+
+        <div class="form-group">
+          <fieldset data-required data-error="Enter the car’s list price">
+            <h1 class="heading-large">What is the car’s list price?</h1>
+            <!-- <span class="form-hint">Ask your employer or check with <a href="#">DVLA</a> or the <a href="#">Vehicle Certification Agency</a>. -->
+            <p>This includes VAT, accessories and additional extras such as metallic paint upgrade.</p>
+            <label class="heading-large" for="car-model">
+            </label>
+            <span>£</span>
+            <input id="list-price" class="form-control" name="car-list-price" type="text" value="{{data['car-list-price']}}">
+          </fieldset>
+        </div>
+
+
+
+        <input type="hidden" name="co2emissions" value="{{data['otherco2emissions']}}"</input>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}

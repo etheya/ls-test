@@ -1,0 +1,181 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="select-employer">Back</a>
+      <h1 class="heading-large">When did you get the car?</h1>
+
+
+      <form action="when-was-car-registered-with-DVLA" method="post" class="form">
+        <div class="form-group">
+          <fieldset data-required data-error="Enter the date you got the car">
+
+            <p class="form-hint" id="dob-hint">For example, 12 6 2015</p>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="car-day">Day</label>
+                <input class="form-control" id="carday" name="car-day" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint" value="{{data['car-day']}}">
+                <input type="hidden" id="cardaystring" name="car-day-string"/>
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="car-month">Month</label>
+                <input class="form-control" id="carmonth" name="car-month" type="text" pattern="[0-9]*" min="0" max="12" value="{{data['car-month']}}">
+                <input type="hidden" id="carmonthstring" name="car-month-string"/>
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="car-year">Year</label>
+                <input class="form-control" id="caryear" name="car-year" type="text" pattern="[0-9]*" min="0" max="2016" value="{{data['car-year']}}">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+<script type="text/javascript">
+
+function evaluateDate(userInput) {
+
+  var monthString = ''
+
+  switch (userInput) {
+    case '1':
+    case '01':
+      monthString = 'January'
+      break
+    case '2':
+    case '02':
+      monthString = 'February'
+      break
+    case '3':
+    case '03':
+      monthString = 'March'
+      break
+    case '4':
+    case '04':
+      monthString = 'April'
+      break
+    case '5':
+    case '05':
+      monthString = 'May'
+      break
+    case '6':
+    case '06':
+      monthString = 'June'
+      break
+    case '7':
+    case '07':
+      monthString = 'July'
+      break
+    case '8':
+    case '08':
+      monthString = 'August'
+      break
+    case '9':
+    case '09':
+      monthString = 'September'
+      break
+    case '10':
+      monthString = 'October'
+      break
+    case '11':
+      monthString = 'November'
+      break
+    case '12':
+      monthString = 'December'
+      break
+  }
+  $('#carmonthstring').val(monthString)
+}
+
+$( document ).ready(function() {
+    evaluateDate($( "#carmonth" ).val())
+})
+
+$( "#carmonth" ).on( "input", function() {
+  var userInput = $(this).val()
+  evaluateDate(userInput)
+})
+
+</script>
+
+
+<script type="text/javascript">
+
+function evaluateDay(userInput) {
+
+  var dayString = ''
+
+  switch (userInput) {
+    case '01':
+      dayString = '1'
+      break
+    case '02':
+      dayString = '2'
+      break
+    case '03':
+      dayString = '3'
+      break
+    case '04':
+      dayString = '4'
+      break
+    case '05':
+      dayString = '5'
+      break
+    case '06':
+      dayString = '6'
+      break
+    case '07':
+      dayString = '7'
+      break
+    case '08':
+      dayString = '8'
+      break
+    case '09':
+      dayString = '9'
+      break
+    default:
+      dayString = ''
+      break
+  }
+  $('#cardaystring').val(dayString)
+}
+
+$( document ).ready(function() {
+    evaluateDay($( "#carday" ).val())
+})
+
+$( "#carday" ).on( "input", function() {
+  var userInput = $(this).val()
+  evaluateDay(userInput)
+})
+
+</script>
+
+
+
+
+{% endblock %}

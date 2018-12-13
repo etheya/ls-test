@@ -1,0 +1,223 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+
+
+
+  <div class="column-two-thirds">
+    <p></p>
+  </div>
+  <div class="column-one-third">
+    <br>
+    <p class="right-aligned-text">English | <a href="#">Cymraeg</a></p>
+  </div>
+
+
+  <div class="grid-row">
+    <div class="column-full">
+      <h1 class="heading-xlarge" name="#top">Check or update your company car tax</h1>
+      <p><a href="select-employer">Add a new company car (including any fuel benefit)</a></p>
+      <p><a href="#currentcar">Check your current car</a></p>
+      <p><a href="#benefitsandtax">Benefits and tax</a></p>
+    </div>
+  </div>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium"><a name="currentcar">Your current car</a></h2>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <aside class="govuk-related-items" role="complementary"></aside>
+      <table>
+        <thead>
+          <td>
+            <h2 class="heading-small">Vauxhall Corsa provided by Accenture</h2>
+          <td>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Date registered with DVLA</td>
+            <td>November 2009</td>
+          </tr>
+          <tr>
+            <td>List price including VAT and accessories</td>
+            <td>£24,934</td>
+          </tr>
+          <tr>
+            <td>Your contribution to the price</td>
+            <td>£0</td>
+          </tr>
+          <tr>
+            <td>Your contribution to private use</td>
+            <td>£304</td>
+          </tr>
+          <tr>
+            <td>Fuel for private use</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Fuel type</td>
+            <td>Petrol, hybrid or other</td>
+          </tr>
+          <tr>
+            <td>CO2 emissions</td>
+            <td>102 CO2/km</td>
+          </tr>
+          <tr>
+            <td>Engine size</td>
+            <td>1401cc to 2,000cc</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items" role="complementary"></aside>
+      <h2 class="heading-small">Manage this car</h2>
+      <br>
+
+      <!-- <p><a href="../amend-car/check-your-answers">Amend this car’s details</a></p> -->
+
+      <!--
+        The form below sets up the amend journey. When the Amend link is clicked, the hidden fields are activated and pre-populate the CYA table on the next page.
+      -->
+
+      <form action="../amend-car/check-your-answers" method="post" class="form">
+      <!-- Employer -->
+      <input type="hidden" name="amend-employer" value="Accenture"></input>
+
+      <!-- Date provided -->
+      <input type="hidden" name="car-day" value="1"></input>
+      <input type="hidden" name="car-month" value="03"></input>
+      <input type="hidden" name="car-month-string" value="March"></input>
+      <input type="hidden" name="car-year" value="2009"></input>
+
+      <!-- Date registered with DVLA -->
+      <input type="hidden" name="reg-month" value="01"></input>
+      <input type="hidden" name="reg-month-string" value="January"></input>
+      <input type="hidden" name="reg-year" value="2013"></input>
+
+      <!-- Make and model -->
+      <input type="hidden" name="car-make-model" value="Vauxhall Corsa"></input>
+
+      <!-- Fuel type -->
+      <input type="hidden" name="fueltype" value="Petrol, hybrid or other"></input>
+
+      <!-- Engine size -->
+      <input type="hidden" name="enginesize-group" value="2,001cc or more"></input>
+
+      <!-- CO2 emissions -->
+      <input type="hidden" name="otherco2emissions" value="125"></input>
+
+      <!-- List price-->
+      <input type="hidden" name="car-list-price" value="24934"></input>
+
+      <!-- Salary sacrifice-->
+      <input type="hidden" name="salarysacrifice-group" value="Yes"></input>
+
+      <!-- Salary sacrifice amount -->
+      <input type="hidden" name="ss-yes" value="78"></input>
+
+      <!-- Did you pay anything towards the car? (fuel benefit) -->
+      <input type="hidden" name="employer-fuel-group" value="No"></input>
+
+      <!-- Date fuel allowance began (this date is initially the same date as the date provided) -->
+      <input type="hidden" name="fuel-benefit-start-day" value="1"></input>
+      <input type="hidden" name="fuel-benefit-start-month" value="03"></input>
+      <input type="hidden" name="fuel-benefit-start-month-string" value="March"></input>
+      <input type="hidden" name="fuel-benefit-start-year" value="2009"></input>
+
+
+      <!-- <input type="hidden" name="amend-fuel-private-use" value="No"></input>
+      <input type="hidden" name="amend-pay-employer-private-use" value="No"></input> -->
+
+      <div class="form-group">
+        <p><a href="check-your-answers" >Amend this car’s details</a></p>
+      </div>
+
+      </form>
+
+      <p><a href="when-did-you-give-car-back">Replace this car</a></p>
+      <p><a href="remove-car/old-car-date">Remove this car</a></p>
+      <p><a href="add-fuel-benefit">Add a fuel benefit</a></p>
+      <p><a href="remove-fuel-benefit/when-did-fuel-benefit-stop">Remove a fuel benefit</a></p>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium"><a name="benefitsandtax">Benefits and tax</a></h2>
+      <aside class="govuk-related-items" role="complementary"></aside>
+      <table>
+        <thead>
+          <td>
+            <h2 class="heading-small">Company car benefit for the 2017 to 2018 tax year</h2>
+          </td>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col" class="heading-small">Car</th>
+            <th scope="col" class="heading-small">Dates</th>
+            <th scope="col" class="heading-small">Car benefit</th>
+          </tr>
+          <tr>
+            <td>List price including VAT and accessories</td>
+            <td>    </td>
+            <td>£5,181
+          </tr>
+        </tbody>
+      </table>
+      <br>
+
+      <aside class="govuk-related-items" role="complementary"></aside>
+      <table>
+        <thead>
+          <tr>
+            <th scope="row">Estimated tax on your company car benefits</th>
+          </tr>
+        </thead>
+        <tr>
+          <td scope="row"><p>How much tax you pay depends on your total income (your income plus the taxable benefit value).</p></td>
+        </tr>
+      </table>
+      <br>
+      <table>
+        <thead>
+          <tr>
+            <td scope="row" class="heading-small">Benefit</td>
+            <td class="heading-small">Taxable benefit value</td>
+            <td class="heading-small">Basic rate (20%) taxpayer</td>
+            <td class="heading-small">Higher rate (40%) taxpayer</td>
+            <td class="heading-small">Additional rate (45%) taxpayer</td>
+          </tr>
+        </thead>
+        <tbody>
+          <td>Company Car</td>
+          <td>£5,181</td>
+          <td>£1,036.20</td>
+          <td>£2,072.40</td>
+          <td>£2,331.45</td>
+        </tbody>
+      </table>
+      <br>
+      <p><a href="#top">Back to top</a></p>
+
+
+
+
+
+    </div>
+  </div>
+
+</main>
+
+
+
+{% endblock %}

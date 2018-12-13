@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% set pageHeading = "Check or update your company car tax" %}
+{% set pageSection = "Check your eligibility" %}
+
+{% block page_title %}
+    {{ macroPageTitle.pageTitle(pageHeading, pageSection) }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/marallow/phase_banner_beta.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            {{ macroPageHeader.pageHeader(pageHeading) }}
+
+            <p>Tell HMRC about changes to your company car that happen from 6 April 2017 to 5 April 2018.</p>
+            <p>Use this service to check your current car details, change your car details or update your fuel benefit.</p>
+            <p>You must verify your identity to use this service for the first time. You’ll need:</p>
+            <ul class="list list-bullet">
+                <li>a valid UK passport or UK photocard driving licence</li>
+                <li>access to your financial information</li>
+            </ul>
+            <p>You only have to verify your identity once. After that you can sign with your username and password.</p>
+
+            <h2 class="heading-medium">Before you start</h2>
+            <p>You’ll also need:</p>
+            <ul class="list list-bullet">
+                <li>the car’s list price (including VAT and accessories)</li>
+                <li><a href="#">CO2 emissions</a> information</li>
+                <li>You can get these details from the car manufacturer or your employer.</li>
+            </ul>
+
+            <p>You can’t use this service if you’re part of a car averaging or car sharing scheme.</p>
+            <p><a href="#">Contact HMRC</a> or your employer to update your company car details if you can’t do it online.</p>
+
+            <a class="button button-start" href="details" role="button">Start now</a>
+
+        </div>
+    </div>
+</main>
+{% endblock %}

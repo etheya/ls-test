@@ -1,0 +1,48 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="car-fuel-type">Back</a>
+
+      <h1 class="heading-large">What is the car’s engine size?</h1>
+
+      <form action="car-emissions" method="post" class="form">
+        <div class="form-group">
+          <fieldset data-required data-error="Select your car’s engine size">
+            <legend></legend>
+            <div class="multiple-choice">
+              <input id="1400orless" name="enginesize-group" type="radio" value="1,400cc or less" {{ checked( "employer-group", "1,400cc or less")}}>
+              <label for="EmployerOne">1,400cc or less</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="1401to2000" name="enginesize-group" type="radio" value="1,401cc to 2,000cc" {{ checked( "employer-group", "1,401cc to 2,000cc")}}>
+              <label for="EmployerOne">1,401cc to 2,000cc</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="2001ormore" name="enginesize-group" type="radio" value="2,001cc or more" {{ checked( "employer-group", "2,001cc or more")}}>
+              <label for="EmployerOne">2,001cc or more</label>
+            </div>
+          </div>
+
+        </fieldset>
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      </form>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+</main>
+
+{% endblock %}

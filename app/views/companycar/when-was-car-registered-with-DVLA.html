@@ -1,0 +1,118 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="when-did-you-get-car">Back</a>
+
+      <form action="car-make-model" method="post" class="form">
+        <div class="form-group">
+          <fieldset data-required data-error="Enter the date when the car was registered with DVLA">
+            <h1 class="heading-large">When was the car first registered with DVLA?</h1>
+            <p>Check the date the car was <a href="https://www.gov.uk/get-vehicle-information-from-dvla">registered with DVLA</a>.</p>
+            <p class="form-hint" id="reg-date-hint">For example, 6 2017</p>
+
+
+            <div class="form-date">
+
+              <!-- <div class="form-group form-group-day">
+                <label for="reg-day">Day</label>
+                <input class="form-control" id="regday" name="reg-day" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint" value="{{data['reg-day']}}"></input>
+              </div> -->
+
+              <div class="form-group form-group-month">
+                <label for="reg-month">Month</label>
+                <input class="form-control" id="regmonth" name="reg-month" type="number" pattern="[0-9]*" min="0" max="12" value="{{data['reg-month']}}"></input>
+                <input type="hidden" id="regmonthstring" name="reg-month-string"/>
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="reg-year">Year</label>
+                <input class="form-control" id="regyear" name="reg-year" type="text" pattern="[0-9]*" min="0" max="2016" value="{{data['reg-year']}}"></input>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+
+function evaluateDate(userInput) {
+
+  var monthString = ''
+
+  switch (userInput) {
+    case '1':
+    case '01':
+      monthString = 'January'
+      break
+    case '2':
+    case '02':
+      monthString = 'February'
+      break
+    case '3':
+    case '03':
+      monthString = 'March'
+      break
+    case '4':
+    case '04':
+      monthString = 'April'
+      break
+    case '5':
+    case '05':
+      monthString = 'May'
+      break
+    case '6':
+    case '06':
+      monthString = 'June'
+      break
+    case '7':
+    case '07':
+      monthString = 'July'
+      break
+    case '8':
+    case '08':
+      monthString = 'August'
+      break
+    case '9':
+    case '09':
+      monthString = 'September'
+      break
+    case '10':
+      monthString = 'October'
+      break
+    case '11':
+      monthString = 'November'
+      break
+    case '12':
+      monthString = 'December'
+      break
+  }
+  $('#regmonthstring').val(monthString)
+}
+
+$( document ).ready(function() {
+    evaluateDate($( "#regmonth" ).val())
+})
+
+$( "#regmonth" ).on( "input", function() {
+  var userInput = $(this).val()
+  evaluateDate(userInput)
+})
+
+</script>
+{% endblock %}

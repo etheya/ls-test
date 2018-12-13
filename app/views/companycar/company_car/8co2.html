@@ -1,0 +1,49 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form action="9car_cost" method="post" class="form">
+
+        <a class="link-back" href="7engine_size">Back</a>
+
+        <!-- <div class="form-group">
+          <fieldset data-required data-error="Enter your car’s CO2 emissions">
+            <label class="heading-large" for="full-name">
+              Enter your car’s CO2 emissions
+              <span class="form-hint">Ask your employer or check with <a href="#">DVLA</a> or the <a href="#">Vehicle Certification Agency</a>.</span>
+            </label>
+            <input id="co2" class="form-control" name="otherco2emissions" type="text" value="{{data['otherco2emissions']}}">
+            <span>g CO2/km</span>
+          </fieldset>
+        </div> -->
+
+        <div class="form-group">
+          <fieldset data-required data-error="Enter your car’s CO2 emissions">
+            <h1 class="heading-large">Enter your car’s CO2 emissions</h1>
+            <span class="form-hint">Ask your employer or check with <a href="#">DVLA</a> or the <a href="#">Vehicle Certification Agency</a>.
+            <label class="heading-large" for="car-model">
+            </label>
+            <input id="co2" class="form-control" name="otherco2emissions" type="text" value="{{data['otherco2emissions']}}">
+            <span>g CO2/km</span>
+          </fieldset>
+        </div>
+
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

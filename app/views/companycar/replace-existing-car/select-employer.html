@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a class="link-back" href="when-did-fuel-benefit-stop">Back</a>
+        <h1 class="heading-large">Confirm your employer </h1>
+
+      <form action="when-did-you-get-car" method="post" class="form">
+        <legend id="select-your-employer">
+        </legend>
+        <p>Accenture</p>
+
+        <!-- <div class="form-group">
+          <fieldset data-required data-error="Select an employer">
+            <legend id="employer-choices"></legend>
+            <div class="multiple-choice">
+              <input id="EmployerOne" name="employer-group" type="radio" value="Accenture" {{ checked( "employer-group", "Accenture")}}>
+              <label for="EmployerOne">Accenture</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="EmployerTwo" type="radio" name="employer-group" value="HMRC" {{ checked( "employer-group", "HMRC")}}>
+              <label for="EmployerTwo">HMRC</label>
+            </div>
+          </div> -->
+
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      </form>
+      <br>
+      <p>
+        <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/income-tax-enquiries-for-individuals-pensioners-and-employees">Tell HMRC if your employer is not listed</a>
+      </p>
+
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

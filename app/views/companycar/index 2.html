@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <br>
+      <h1 class="heading-xlarge">
+        Company Car Prototype
+        <span class="heading-secondary">Prototype kit version v6.3.0</span>
+      </h1>
+
+      <h2 class="heading-large">Full Service</h2>
+      <p><a href="1Add_Car.html">Sprint Three</a></p>
+
+      <br>
+      <h2 class="heading-large">Individual User Journeys</h2>
+
+      <h2 class="heading-medium">Amending a company car</h2>
+
+      <!--
+        The form below sets up the amend journey. When the Amend link is clicked, the hidden fields are activated and pre-populate the CYA table on the next page.
+      -->
+
+      <form action="../amend-car/check-your-answers" method="post" class="form">
+
+      <!-- Date provided -->
+      <input type="hidden" name="car-day" value="1"></input>
+      <input type="hidden" name="car-month" value="03"></input>
+      <input type="hidden" name="car-month-string" value="March"></input>
+      <input type="hidden" name="car-year" value="2009"></input>
+
+      <!-- Date registered with DVLA -->
+      <input type="hidden" name="reg-month" value="01"></input>
+      <input type="hidden" name="reg-month-string" value="January"></input>
+      <input type="hidden" name="reg-year" value="2013"></input>
+
+      <!-- Make and model -->
+      <input type="hidden" name="car-make-model" value="Vauxhall Corsa"></input>
+
+      <!-- Fuel type -->
+      <input type="hidden" name="fueltype" value="Petrol, hybrid or other"></input>
+
+      <!-- Engine size -->
+      <input type="hidden" name="enginesize-group" value="2,001cc or more"></input>
+
+      <!-- CO2 emissions -->
+      <input type="hidden" name="otherco2emissions" value="125"></input>
+
+      <!-- List price-->
+      <input type="hidden" name="car-list-price" value="24934"></input>
+
+      <!-- Salary sacrifice-->
+      <input type="hidden" name="salarysacrifice-group" value="Yes"></input>
+
+      <!-- Salary sacrifice amount -->
+      <input type="hidden" name="ss-yes" value="78"></input>
+
+      <!-- Did you pay anything towards the car? (fuel benefit) -->
+      <input type="hidden" name="employer-fuel-group" value="No"></input>
+
+      <!-- Date fuel allowance began (this date is initially the same date as the date provided) -->
+      <input type="hidden" name="fuel-benefit-start-day" value="1"></input>
+      <input type="hidden" name="fuel-benefit-start-month" value="03"></input>
+      <input type="hidden" name="fuel-benefit-start-month-string" value="March"></input>
+      <input type="hidden" name="fuel-benefit-start-year" value="2009"></input>
+
+      <div class="form-group">
+        <p><a href="#" onclick="$(this).closest('form').submit();">Amend this car’s details</a></p>
+      </div>
+
+      </form>
+
+      <h2 class="heading-medium">Adding a company car</h2>
+      <p><a href="company_car/1Add_Car.html">Sprint one & two</a></p>
+      <p><a href="usability-testing-changes/when-did-you-get-car">Sprint three</a></p>
+      <!-- <p><a href="Sprint2/1Add_Car.html">Sprint Two</a></p> -->
+
+      <h2 class="heading-medium">Replacing a company car</h2>
+      <p><a href="when-did-you-give-car-back">Sprint three</a></p>
+
+      <h2 class="heading-medium">Removing a company car</h2>
+      <p><a href="remove-car/old-car-date">2 July 2018</a></p>
+
+      <h2 class="heading-medium">Adding a fuel benefit</h2>
+      <p><a href="add-fuel-benefit">Sprint three</a></p>
+
+      <h2 class="heading-medium">Removing a fuel benefit</h2>
+      <p><a href="remove-fuel-benefit/when-did-fuel-benefit-stop">Sprint three</a></p>
+
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

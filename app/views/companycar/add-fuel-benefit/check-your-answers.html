@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <!-- Headings -->
+      <h1 class="heading-large">
+        Check your details before sending them
+      </h1>
+
+      <!-- <div class="panel panel-border-wide"> -->
+        <p>
+          Your changes may affect the amount of tax you pay. If a company car is made available to you, car benefit will apply and you may need to pay tax on it.
+        </p>
+      <!-- </div> -->
+
+      <h2 class="heading-medium">
+        Company fuel provided by Accenture
+      </h2>
+
+      <!-- Body with table modifiers -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+
+        <!-- Date fuel benefit stopped -->
+        <div>
+          <dt class="cya-question">
+            Fuel for private use
+          </dt>
+          <dd class="cya-answer">
+            <!-- {{data['add-fuel-benefit-group']}} -->
+          </dd>
+          <dd class="cya-change">
+            <a href="add-fuel-benefit?edit=true">Change <span class="visually-hidden"> name</span></a>
+          </dd>
+        </div>
+
+      </dl>
+      <br>
+      <a class="button" href="confirmation" role="button">Send</a>
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
